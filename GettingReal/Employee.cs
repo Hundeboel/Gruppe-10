@@ -9,6 +9,8 @@ namespace GettingReal
 {
     public class Employee
     {
-        public string role { get; set; }
+        public string Role { get; set; }
+        public string Name { get; set; }
+        public string Id { get; set; }
     }
 }
