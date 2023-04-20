@@ -8,5 +8,6 @@ namespace GettingReal
 {
     public class Calendar
     {
+        public int year;
     }
 }
