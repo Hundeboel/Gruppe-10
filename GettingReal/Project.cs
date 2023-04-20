@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GettingReal
 {
-    internal class Project
+    public class Project
     {
     }
 }
