@@ -8,9 +8,9 @@ namespace GettingReal
 {
     public class Rental
     {
-        public Project project { get; set; }
-        public Resource resource { get; set; }
-        public Employee employee { get; set; }
-        public Calendar timeframe { get; set; }
+        public Project Project { get; set; }
+        public Resource Resource { get; set; }
+        public Employee Rentee { get; set; }
+        public TimeSpan Timeframe { get; set; }
     }
 }

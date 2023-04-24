@@ -8,17 +8,19 @@ namespace GettingReal
 {
     public class Fastener
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
         public string Type { get; set; }
         public string Description { get; set; }
         public int Amount { get; set; }
-        public int Id { get; set; }
 
-        public Fastener(string type, string description,int amount, int id) 
+        public Fastener(int id, string name, string type, string description,int amount) 
         {
+            Id = id;
+            Name = name;
             Type = type;
             Description = description;
-            Amount = amount;
-            Id = id;
+            Amount = amount;   
         }
     }
 }

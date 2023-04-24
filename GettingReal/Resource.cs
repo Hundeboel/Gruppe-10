@@ -8,17 +8,20 @@ namespace GettingReal
 {
     public class Resource
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
         public string Type { get; set; }
         public int Amount { get; set; }
         public bool Rented { get; set; }
-        public int Id { get; set; }
 
-        public Resource (string type, int amount, bool rented, int id)
+
+        public Resource (int id, string name, string type, int amount, bool rented)
         {
+            Id = id;
+            Name = name;
             Type = type;
             Amount = amount;
             Rented = rented;
-            Id = id;
         }
     }
 }
