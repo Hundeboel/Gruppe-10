@@ -8,7 +8,13 @@ namespace GettingReal
 {
     public class Calendar
     {  
-        public int year;
-        public int month;
+        public DateTime Date { get; set; }
+        public DateTime Timestamp { get; set; }
+
+        public Calendar(DateTime date, DateTime timestamp)
+        {
+            Date = date;
+            Timestamp = timestamp;
+        }
     }
 }
