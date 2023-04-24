@@ -11,6 +11,13 @@ namespace GettingReal
     {
         public string Role { get; set; }
         public string Name { get; set; }
-        public string Id { get; set; }
+        public int Id { get; set; }
+
+        public Employee(string role, string name, int id)  
+        {  
+            Role = role;
+            Name = name;
+            Id = id;
+        }
     }
 }
