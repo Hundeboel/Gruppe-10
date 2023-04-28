@@ -55,5 +55,25 @@ namespace WPFapp
         {
 
         }
+
+        private void TextBox_FirstName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_LastName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_Role_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_UNKNOWN_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

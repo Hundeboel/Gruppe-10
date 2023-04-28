@@ -8,20 +8,23 @@
         Title="Project" Height="640" Width="360" Background="IndianRed"
         WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
-        <Label Content="Navn" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top"/>
-        <Label Content="Status" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top"/>
-        <Label Content="Startdato" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top"/>
-        <Label Content="Slutdato" HorizontalAlignment="Left" Margin="100,250,0,0" VerticalAlignment="Top"/>
-        
-        <TextBox HorizontalAlignment="Left" Margin="200,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="200,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="200,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="200,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        
-        <Button Content="Nyt projekt" HorizontalAlignment="Left" Margin="100,300,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Redigér" HorizontalAlignment="Left" Margin="100,350,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Tidligere projekt" HorizontalAlignment="Left" Margin="100,400,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Næste projekt" HorizontalAlignment="Left" Margin="100,450,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="Label_Index" Content="Index" HorizontalAlignment="Left" Margin="100,50,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Count" Content="Count" HorizontalAlignment="Left" Margin="200,50,0,0" VerticalAlignment="Top"/>
+
+        <Label x:Name="Label_Name" Content="Navn" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Status" Content="Status" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_StartDate" Content="Startdato" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_EndDate" Content="Slutdato" HorizontalAlignment="Left" Margin="100,250,0,0" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="TextBox_Name" HorizontalAlignment="Left" Margin="200,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Name_TextChanged" IsEnabled="False"/>
+        <TextBox x:Name="TextBox_Status" HorizontalAlignment="Left" Margin="200,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Status_TextChanged" IsEnabled="False"/>
+        <TextBox x:Name="TextBox_StartDate" HorizontalAlignment="Left" Margin="200,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_StartDate_TextChanged" IsEnabled="False"/>
+        <TextBox x:Name="TextBox_EndDate" HorizontalAlignment="Left" Margin="200,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_EndDate_TextChanged" IsEnabled="False"/>
+
+        <Button x:Name="Button_NewProject" Content="Nyt projekt" HorizontalAlignment="Left" Margin="100,300,0,0" VerticalAlignment="Top" Width="100" Click="Button_NewProject_Click"/>
+        <Button x:Name="Button_Edit" Content="Redigér" HorizontalAlignment="Left" Margin="100,350,0,0" VerticalAlignment="Top" Width="100" Click="Button_Edit_Click" IsEnabled="False"/>
+        <Button x:Name="Button_Prev" Content="Tidligere projekt" HorizontalAlignment="Left" Margin="100,400,0,0" VerticalAlignment="Top" Width="100" Click="Button_Prev_Click" IsEnabled="False"/>
+        <Button x:Name="Button_Next" Content="Næste projekt" HorizontalAlignment="Left" Margin="100,450,0,0" VerticalAlignment="Top" Width="100" Click="Button_Next_Click" IsEnabled="False"/>
 
         <Button x:Name="Button_MainPage" Content="Main Page" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Click="Button_MainPage_Click"/>
     </Grid>

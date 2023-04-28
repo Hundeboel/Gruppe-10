@@ -8,20 +8,23 @@
         Title="Rental" Height="640" Width="360" Background="Peru"
         WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
-        <Label Content="Ressource" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top"/>
-        <Label Content="Projekt" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top"/>
-        <Label Content="Periode" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top"/>
-        <Label Content="Låner" HorizontalAlignment="Left" Margin="100,250,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Index" Content="Index" HorizontalAlignment="Left" Margin="100,50,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Count" Content="Count" HorizontalAlignment="Left" Margin="200,50,0,0" VerticalAlignment="Top"/>
 
-        <TextBox HorizontalAlignment="Left" Margin="200,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="200,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="200,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="200,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="Label_Resource" Content="Ressource" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Project" Content="Projekt" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Periode" Content="Periode" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Renter" Content="Låner" HorizontalAlignment="Left" Margin="100,250,0,0" VerticalAlignment="Top"/>
 
-        <Button Content="Nyt lån" HorizontalAlignment="Left" Margin="100,300,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Redigér" HorizontalAlignment="Left" Margin="100,350,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Tidligere lån" HorizontalAlignment="Left" Margin="100,400,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Næste lån" HorizontalAlignment="Left" Margin="100,450,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="TextBox_Resource" HorizontalAlignment="Left" Margin="200,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Resource_TextChanged" IsEnabled="False"/>
+        <TextBox x:Name="TextBox_Project" HorizontalAlignment="Left" Margin="200,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Project_TextChanged" IsEnabled="False"/>
+        <TextBox x:Name="TextBox_Periode" HorizontalAlignment="Left" Margin="200,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Periode_TextChanged" IsEnabled="False"/>
+        <TextBox x:Name="TextBox_Renter" HorizontalAlignment="Left" Margin="200,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Renter_TextChanged" IsEnabled="False"/>
+
+        <Button x:Name="Button_NewRental" Content="Nyt lån" HorizontalAlignment="Left" Margin="100,300,0,0" VerticalAlignment="Top" Width="100" Click="Button_NewRental_Click"/>
+        <Button x:Name="Button_Edit" Content="Redigér" HorizontalAlignment="Left" Margin="100,350,0,0" VerticalAlignment="Top" Width="100" Click="Button_Edit_Click" IsEnabled="False"/>
+        <Button x:Name="Button_Prev" Content="Tidligere lån" HorizontalAlignment="Left" Margin="100,400,0,0" VerticalAlignment="Top" Width="100" Click="Button_Prev_Click" IsEnabled="False"/>
+        <Button x:Name="Button_Next" Content="Næste lån" HorizontalAlignment="Left" Margin="100,450,0,0" VerticalAlignment="Top" Width="100" Click="Button_Next_Click" IsEnabled="False"/>
 
         <Button x:Name="Button_MainPage" Content="Main Page" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Click="Button_MainPage_Click"/>
     </Grid>

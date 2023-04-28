@@ -8,20 +8,23 @@
         Title="Fastener" Height="640" Width="360" Background="Plum"
         WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
-        <Label Content="Navn" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top"/>
-        <Label Content="Type" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top"/>
-        <Label Content="Specifikation" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top"/>
-        <Label Content="Antal" HorizontalAlignment="Left" Margin="100,250,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Index" Content="Index" HorizontalAlignment="Left" Margin="100,50,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Count" Content="Count" HorizontalAlignment="Left" Margin="200,50,0,0" VerticalAlignment="Top"/>
 
-        <TextBox HorizontalAlignment="Left" Margin="200,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="200,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="200,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="200,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="Label_Name" Content="Navn" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Type" Content="Type" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Spes" Content="Specifikation" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Amount" Content="Antal" HorizontalAlignment="Left" Margin="100,250,0,0" VerticalAlignment="Top"/>
 
-        <Button Content="Nyt samlingsmateriale" HorizontalAlignment="Left" Margin="100,300,0,0" VerticalAlignment="Top" Width="170"/>
-        <Button Content="Redigér" HorizontalAlignment="Left" Margin="100,350,0,0" VerticalAlignment="Top" Width="170"/>
-        <Button Content="Tidligere samlingsmateriale" HorizontalAlignment="Left" Margin="100,400,0,0" VerticalAlignment="Top" Width="170"/>
-        <Button Content="Næste samlingsmateriale" HorizontalAlignment="Left" Margin="100,450,0,0" VerticalAlignment="Top" Width="170"/>
+        <TextBox x:Name="TextBox_Name" HorizontalAlignment="Left" Margin="200,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Name_TextChanged" IsEnabled="False"/>
+        <TextBox x:Name="TextBox_Type" HorizontalAlignment="Left" Margin="200,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Type_TextChanged" IsEnabled="False"/>
+        <TextBox x:Name="TextBox_Spes" HorizontalAlignment="Left" Margin="200,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Spes_TextChanged" IsEnabled="False"/>
+        <TextBox x:Name="TextBox_Amount" HorizontalAlignment="Left" Margin="200,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Amount_TextChanged" IsEnabled="False"/>
+
+        <Button x:Name="Button_NewFastener" Content="Nyt samlingsmateriale" HorizontalAlignment="Left" Margin="100,300,0,0" VerticalAlignment="Top" Width="170" Click="Button_NewFastener_Click"/>
+        <Button x:Name="Button_Edit" Content="Redigér" HorizontalAlignment="Left" Margin="100,350,0,0" VerticalAlignment="Top" Width="170" Click="Button_Edit_Click" IsEnabled="False"/>
+        <Button x:Name="Button_Prev" Content="Tidligere samlingsmateriale" HorizontalAlignment="Left" Margin="100,400,0,0" VerticalAlignment="Top" Width="170" Click="Button_Prev_Click" IsEnabled="False"/>
+        <Button x:Name="Button_Next" Content="Næste samlingsmateriale" HorizontalAlignment="Left" Margin="100,450,0,0" VerticalAlignment="Top" Width="170" Click="Button_Next_Click" IsEnabled="False"/>
 
         <Button x:Name="Button_MainPage" Content="Main Page" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Click="Button_MainPage_Click"/>
 
