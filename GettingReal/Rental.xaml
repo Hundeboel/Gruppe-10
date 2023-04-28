@@ -5,22 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFapp"
         mc:Ignorable="d"
-        Title="Rental" Height="450" Width="800">
+        Title="Rental" Height="640" Width="360" Background="Peru"
+        WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
-        <Label Content="Ressource" HorizontalAlignment="Left" Margin="102,100,0,0" VerticalAlignment="Top"/>
-        <Label Content="Projekt" HorizontalAlignment="Left" Margin="102,150,0,0" VerticalAlignment="Top"/>
-        <Label Content="Periode" HorizontalAlignment="Left" Margin="102,200,0,0" VerticalAlignment="Top"/>
-        <Label Content="Låner" HorizontalAlignment="Left" Margin="102,250,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ressource" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top"/>
+        <Label Content="Projekt" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top"/>
+        <Label Content="Periode" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top"/>
+        <Label Content="Låner" HorizontalAlignment="Left" Margin="100,250,0,0" VerticalAlignment="Top"/>
 
-        <TextBox HorizontalAlignment="Left" Margin="202,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="202,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="202,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="202,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="200,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="200,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="200,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="200,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
 
-        <Button Content="Nyt lån" HorizontalAlignment="Left" Margin="402,100,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Redigér" HorizontalAlignment="Left" Margin="402,150,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Tidligere lån" HorizontalAlignment="Left" Margin="402,200,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Næste lån" HorizontalAlignment="Left" Margin="402,250,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Nyt lån" HorizontalAlignment="Left" Margin="100,300,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Redigér" HorizontalAlignment="Left" Margin="100,350,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Tidligere lån" HorizontalAlignment="Left" Margin="100,400,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Næste lån" HorizontalAlignment="Left" Margin="100,450,0,0" VerticalAlignment="Top" Width="100"/>
 
+        <Button x:Name="Button_MainPage" Content="Main Page" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Click="Button_MainPage_Click"/>
     </Grid>
 </Window>

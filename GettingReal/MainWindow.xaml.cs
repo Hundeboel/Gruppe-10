@@ -24,5 +24,40 @@ namespace WPFapp
         {
             InitializeComponent();
         }
+
+        private void Button_Project_Click(object sender, RoutedEventArgs e)
+        {
+            var newWindow = new Project(); //create your new form.
+            newWindow.Show(); //show the new form.
+            this.Close(); //only if you want to close the current form.
+        }
+
+        private void Button_Employee_Click(object sender, RoutedEventArgs e)
+        {
+            var newWindow = new Employee();
+            newWindow.Show();
+            this.Close();
+        }
+
+        private void Button_Resource_Click(object sender, RoutedEventArgs e)
+        {
+            var newWindow = new Resource();
+            newWindow.Show();
+            this.Close();
+        }
+
+        private void Button_Fastener_Click(object sender, RoutedEventArgs e)
+        {
+            var newWindow = new Fastener();
+            newWindow.Show();
+            this.Close();
+        }
+
+        private void Button_Rental_Click(object sender, RoutedEventArgs e)
+        {
+            var newWindow = new Rental();
+            newWindow.Show();
+            this.Close();
+        }
     }
 }

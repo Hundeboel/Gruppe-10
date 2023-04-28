@@ -5,12 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFapp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="750">
+        Title="MainWindow" Height="640" Width="360" Background="Beige"
+        WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
-        <Button Content="Projekt" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Ansatte" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Specialressourcer" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Samlingsmateriale" HorizontalAlignment="Left" Margin="100,250,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Button_Project" Content="Projekt" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top" Width="120" Click="Button_Project_Click"/>
+        <Button x:Name="Button_Employee" Content="Ansatte" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top" Width="120" Click="Button_Employee_Click"/>
+        <Button x:Name="Button_Resource" Content="Specialressourcer" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top" Width="120" Click="Button_Resource_Click"/>
+        <Button x:Name="Button_Fastener" Content="Samlingsmateriale" HorizontalAlignment="Left" Margin="100,250,0,0" VerticalAlignment="Top" Width="120" Click="Button_Fastener_Click"/>
+        <Button x:Name="Button_Rental" Content="Udlån" HorizontalAlignment="Left" Margin="100,300,0,0" VerticalAlignment="Top" Width="120" Click="Button_Rental_Click"/>
 
     </Grid>
 </Window>
