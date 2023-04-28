@@ -19,9 +19,12 @@ namespace WPFapp
     /// </summary>
     public partial class Employee : Window
     {
+        private Controller controller;
         public Employee()
         {
             InitializeComponent();
+
+            controller = new Controller();
         }
 
         private void Button_MainPage_Click(object sender, RoutedEventArgs e)
@@ -29,6 +32,28 @@ namespace WPFapp
             var newWindow = new MainWindow();
             newWindow.Show();
             this.Close();
+        }
+
+        private void Button_NewEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            controller.AddInstance();
+            Label_Count.Content = controller.InstanceCount.ToString();
+            Label_Index.Content = controller.InstanceIndex.ToString();
+        }
+
+        private void Button_EditEmployee_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Prev_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Next_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

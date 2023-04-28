@@ -8,6 +8,9 @@
         Title="Employee" Height="640" Width="360" Background="ForestGreen"
         WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
+        <Label x:Name="Label_Index" Content="Index" HorizontalAlignment="Left" Margin="100,50,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Count" Content="Count" HorizontalAlignment="Left" Margin="200,50,0,0" VerticalAlignment="Top"/>
+        
         <Label Content="Fornavn" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top"/>
         <Label Content="Efternavn" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top"/>
         <Label Content="Rolle" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top"/>
@@ -18,10 +21,10 @@
         <TextBox HorizontalAlignment="Left" Margin="200,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Margin="200,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         
-        <Button Content="Ny ansat" HorizontalAlignment="Left" Margin="100,300,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Redigér" HorizontalAlignment="Left" Margin="100,350,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Tidligere profil" HorizontalAlignment="Left" Margin="100,400,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Næste profil" HorizontalAlignment="Left" Margin="100,450,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="Button_NewEmployee" Content="Ny ansat" HorizontalAlignment="Left" Margin="100,300,0,0" VerticalAlignment="Top" Width="100" Click="Button_NewEmployee_Click"/>
+        <Button x:Name="Button_EditEmployee" Content="Redigér" HorizontalAlignment="Left" Margin="100,350,0,0" VerticalAlignment="Top" Width="100" Click="Button_EditEmployee_Click"/>
+        <Button x:Name="Button_Prev" Content="Tidligere profil" HorizontalAlignment="Left" Margin="100,400,0,0" VerticalAlignment="Top" Width="100" Click="Button_Prev_Click"/>
+        <Button x:Name="Button_Next" Content="Næste profil" HorizontalAlignment="Left" Margin="100,450,0,0" VerticalAlignment="Top" Width="100" Click="Button_Next_Click"/>
 
         <Button x:Name="Button_MainPage" Content="Main Page" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Click="Button_MainPage_Click"/>
 
