@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\45281\Source\Repos\gettingreal\GettingReal\App.xaml
-21198964694
+6-332227431
 
-12239822580
+161729732133
 194101785492
-MainWindow.xaml;NewProject.xaml;
+Employee.xaml;Fastener.xaml;MainWindow.xaml;Project.xaml;Rental.xaml;Resource.xaml;
 
 True
 

@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace WPFapp
 {
     /// <summary>
-    /// Interaction logic for NewProject.xaml
+    /// Interaction logic for Resource.xaml
     /// </summary>
-    public partial class NewProject : Window
+    public partial class Resource : Window
     {
-        public NewProject()
+        public Resource()
         {
             InitializeComponent();
         }

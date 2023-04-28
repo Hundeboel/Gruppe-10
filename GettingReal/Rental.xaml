@@ -1,0 +1,26 @@
+﻿<Window x:Class="WPFapp.Rental"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFapp"
+        mc:Ignorable="d"
+        Title="Rental" Height="450" Width="800">
+    <Grid>
+        <Label Content="Ressource" HorizontalAlignment="Left" Margin="102,100,0,0" VerticalAlignment="Top"/>
+        <Label Content="Projekt" HorizontalAlignment="Left" Margin="102,150,0,0" VerticalAlignment="Top"/>
+        <Label Content="Periode" HorizontalAlignment="Left" Margin="102,200,0,0" VerticalAlignment="Top"/>
+        <Label Content="Låner" HorizontalAlignment="Left" Margin="102,250,0,0" VerticalAlignment="Top"/>
+
+        <TextBox HorizontalAlignment="Left" Margin="202,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="202,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="202,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="202,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+        <Button Content="Nyt lån" HorizontalAlignment="Left" Margin="402,100,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Redigér" HorizontalAlignment="Left" Margin="402,150,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Tidligere lån" HorizontalAlignment="Left" Margin="402,200,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Næste lån" HorizontalAlignment="Left" Margin="402,250,0,0" VerticalAlignment="Top" Width="100"/>
+
+    </Grid>
+</Window>

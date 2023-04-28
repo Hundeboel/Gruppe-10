@@ -1,0 +1,26 @@
+﻿<Window x:Class="WPFapp.Resource"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFapp"
+        mc:Ignorable="d"
+        Title="Resource" Height="450" Width="800">
+    <Grid>
+        <Label Content="Navn" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top"/>
+        <Label Content="Type" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top"/>
+        <Label Content="Udlånsstatus" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top"/>
+        <Label Content="Antal" HorizontalAlignment="Left" Margin="100,250,0,0" VerticalAlignment="Top"/>
+        
+        <TextBox HorizontalAlignment="Left" Margin="200,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="200,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="200,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="200,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        
+        <Button Content="Ny resource" HorizontalAlignment="Left" Margin="400,100,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Redigér" HorizontalAlignment="Left" Margin="400,150,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Tidligere resource" HorizontalAlignment="Left" Margin="400,200,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Næste resource" HorizontalAlignment="Left" Margin="400,250,0,0" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>

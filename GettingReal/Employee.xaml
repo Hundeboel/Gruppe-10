@@ -1,0 +1,26 @@
+﻿<Window x:Class="WPFapp.Employee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFapp"
+        mc:Ignorable="d"
+        Title="Employee" Height="450" Width="800">
+    <Grid>
+        <Label Content="Fornavn" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top"/>
+        <Label Content="Efternavn" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top"/>
+        <Label Content="Rolle" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top"/>
+        <Label Content="???" HorizontalAlignment="Left" Margin="100,250,0,0" VerticalAlignment="Top"/>
+        
+        <TextBox HorizontalAlignment="Left" Margin="200,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="200,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="200,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="200,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        
+        <Button Content="Ny ansat" HorizontalAlignment="Left" Margin="400,100,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Redigér" HorizontalAlignment="Left" Margin="400,150,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Tidligere profil" HorizontalAlignment="Left" Margin="400,200,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Næste profil" HorizontalAlignment="Left" Margin="400,250,0,0" VerticalAlignment="Top" Width="100"/>
+
+    </Grid>
+</Window>

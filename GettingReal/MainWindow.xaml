@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFapp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="750">
     <Grid>
+        <Button Content="Projekt" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Ansatte" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Specialressourcer" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Samlingsmateriale" HorizontalAlignment="Left" Margin="100,250,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
