@@ -10,7 +10,7 @@ namespace WPFapp
     {
         public ProjectClass Project { get; set; }
         public ResourceClass Resource { get; set; }
-        public EmployeeClass Rentee { get; set; }
+        public Employee Rentee { get; set; }
         public TimeSpan Timeframe { get; set; }
     }
 }

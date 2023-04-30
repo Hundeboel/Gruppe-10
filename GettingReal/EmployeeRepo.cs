@@ -8,7 +8,7 @@ namespace WPFapp
 {
     public class EmployeeRepo
     {
-        private List<EmployeeClass> employees;
+        private List<Employee> employees;
 
         public int Count
         {
@@ -17,17 +17,17 @@ namespace WPFapp
 
         public EmployeeRepo()
         {
-            employees = new List<EmployeeClass>();
+            employees = new List<Employee>();
         }
 
-        public void AddEmployee(EmployeeClass employee)
+        public void AddEmployee(Employee employee)
         {
             employees.Add(employee);
         }
 
-        public EmployeeClass GetEmployeeAtIndex(int index)
+        public Employee GetEmployeeAtIndex(int index)
         {
-            EmployeeClass employeeResultat = null;
+            Employee employeeResultat = null;
             if (index >= 0 && index < employees.Count)
             {
                 employeeResultat = employees[index];
@@ -44,7 +44,7 @@ namespace WPFapp
             }
         }
 
-        public void RemoveEmployee(EmployeeClass employee)
+        public void RemoveEmployee(Employee employee)
         {
             if (employee != null)
             {

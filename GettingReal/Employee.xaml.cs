@@ -39,6 +39,12 @@ namespace WPFapp
             controller.AddInstance();
             Label_Count.Content = controller.InstanceCount.ToString();
             Label_Index.Content = controller.InstanceIndex.ToString();
+
+            Button_Next.IsEnabled = true;
+            Button_Prev.IsEnabled = true;
+
+            enabledTextboxes();
+            clearTextboxes();
         }
 
         private void Button_EditEmployee_Click(object sender, RoutedEventArgs e)
@@ -51,6 +57,8 @@ namespace WPFapp
             controller.PrevInstance();
             Label_Count.Content = controller.InstanceCount.ToString();
             Label_Index.Content = controller.InstanceIndex.ToString();
+            disabledTextboxes();
+            updateTextbboxes();
         }
 
         private void Button_Next_Click(object sender, RoutedEventArgs e)
@@ -58,6 +66,8 @@ namespace WPFapp
             controller.NextInstance();
             Label_Count.Content = controller.InstanceCount.ToString();
             Label_Index.Content = controller.InstanceIndex.ToString();
+            disabledTextboxes();
+            updateTextbboxes();
         }
 
         private void TextBox_FirstName_TextChanged(object sender, TextChangedEventArgs e)
@@ -67,17 +77,54 @@ namespace WPFapp
 
         private void TextBox_LastName_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            controller.CurrentInstance.LastName = TextBox_LastName.Text;
         }
 
         private void TextBox_Role_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            controller.CurrentInstance.Role = TextBox_Role.Text;
         }
 
         private void TextBox_UNKNOWN_TextChanged(object sender, TextChangedEventArgs e)
         {
+            int a = 0;
+            bool b = int.TryParse(TextBox_UNKNOWN.Text, out a);
+            if(b == true)
+            {
+                controller.CurrentInstance.Id = a;
+            }
+        }
 
+        private void enabledTextboxes() 
+        {
+            TextBox_FirstName.IsEnabled = true;
+            TextBox_LastName.IsEnabled = true;
+            TextBox_Role.IsEnabled = true;
+            TextBox_UNKNOWN.IsEnabled = true;
+        }
+
+        private void disabledTextboxes()
+        {
+            TextBox_FirstName.IsEnabled = false;
+            TextBox_LastName.IsEnabled = false;
+            TextBox_Role.IsEnabled = false;
+            TextBox_UNKNOWN.IsEnabled = false;
+        }
+
+        private void updateTextbboxes()
+        {
+            TextBox_FirstName.Text = controller.CurrentInstance.FirstName;
+            TextBox_LastName.Text = controller.CurrentInstance.LastName;
+            TextBox_Role.Text = controller.CurrentInstance.Role;
+            TextBox_UNKNOWN.Text = controller.CurrentInstance.Id.ToString();
+        }
+
+        private void clearTextboxes()
+        {
+            TextBox_FirstName.Text = string.Empty;
+            TextBox_LastName.Text = string.Empty;
+            TextBox_Role.Text = string.Empty;
+            TextBox_UNKNOWN.Text = string.Empty;
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WPFapp
 {
-    public class EmployeeClass
+    public partial class Employee
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
@@ -15,13 +15,12 @@ namespace WPFapp
         public string Role { get; set; }
 
 
-        //Virker ikke hvis constructoren er en del af koden
-        /*public EmployeeClass(int id, string firstname, string lastname, string role)  
+        public Employee(int id, string firstname, string lastname, string role)  
         {  
             Id = id;
             FirstName = firstname;
             LastName = lastname;
             Role = role;
-        }*/
+        }
     }
 }
