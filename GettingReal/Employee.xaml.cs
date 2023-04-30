@@ -40,8 +40,11 @@ namespace WPFapp
             Label_Count.Content = controller.InstanceCount.ToString();
             Label_Index.Content = controller.InstanceIndex.ToString();
 
-            Button_Next.IsEnabled = true;
-            Button_Prev.IsEnabled = true;
+            if(controller.InstanceIndex > 0) 
+            { 
+                Button_Prev.IsEnabled = true;
+            }
+            Button_Next.IsEnabled = false;
 
             enabledTextboxes();
             clearTextboxes();
@@ -59,6 +62,13 @@ namespace WPFapp
             Label_Index.Content = controller.InstanceIndex.ToString();
             disabledTextboxes();
             updateTextbboxes();
+
+            Button_Next.IsEnabled = true;
+
+            if(controller.InstanceIndex == 0 )
+            {
+                Button_Prev.IsEnabled = false;
+            }
         }
 
         private void Button_Next_Click(object sender, RoutedEventArgs e)
@@ -68,6 +78,13 @@ namespace WPFapp
             Label_Index.Content = controller.InstanceIndex.ToString();
             disabledTextboxes();
             updateTextbboxes();
+
+            Button_Prev.IsEnabled = true;
+
+            if(controller.InstanceIndex == controller.InstanceCount - 1)
+            {
+                Button_Next.IsEnabled = false;
+            }
         }
 
         private void TextBox_FirstName_TextChanged(object sender, TextChangedEventArgs e)
