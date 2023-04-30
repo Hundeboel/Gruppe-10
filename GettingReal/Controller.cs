@@ -11,7 +11,7 @@ namespace WPFapp
         //Falsk kode til at koble GUI op
         //Bruger employeeRepo (+ employee) 
         private EmployeeRepo employeeRepo;
-        public Employee CurrentInstance { get; private set; }
+        public EmployeeClass CurrentInstance { get; private set; }
         public int InstanceCount { get; private set; }
         public int InstanceIndex { get; private set; }
 
@@ -25,7 +25,7 @@ namespace WPFapp
 
         public void AddInstance()
         {
-            Employee employee = new Employee();
+            EmployeeClass employee = new EmployeeClass();
             CurrentInstance = employee;
             employeeRepo.AddEmployee(employee);
             InstanceCount = employeeRepo.Count;

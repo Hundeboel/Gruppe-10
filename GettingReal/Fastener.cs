@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GettingReal
+namespace WPFapp
 {
-    public class Fastener
+    public class FastenerClass
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -14,7 +14,7 @@ namespace GettingReal
         public string Description { get; set; }
         public int Amount { get; set; }
 
-        public Fastener(int id, string name, string type, string description,int amount) 
+        public FastenerClass(int id, string name, string type, string description,int amount) 
         {
             Id = id;
             Name = name;

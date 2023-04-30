@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GettingReal
+namespace WPFapp
 {
-    public class Rental
+    public class RentalClass
     {
-        public Project Project { get; set; }
-        public Resource Resource { get; set; }
-        public Employee Rentee { get; set; }
+        public ProjectClass Project { get; set; }
+        public ResourceClass Resource { get; set; }
+        public EmployeeClass Rentee { get; set; }
         public TimeSpan Timeframe { get; set; }
     }
 }

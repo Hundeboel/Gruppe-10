@@ -173,7 +173,7 @@ namespace WPFapp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WPFapp;V1.0.0.0;component/resource.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WPFapp;component/resource.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Resource.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

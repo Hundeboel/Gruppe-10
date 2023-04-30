@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GettingReal
+namespace WPFapp
 {
-    public class Project
+    public class ProjectClass
     {
         public string Name { get; set; }
         public bool Finished { get; set; }
         public TimeSpan Timeframe { get; set; }
 
-        public Project(string name, bool finished, TimeSpan timeframe)
+        public ProjectClass(string name, bool finished, TimeSpan timeframe)
         {
             Name = name;
             Finished = finished;
