@@ -5,18 +5,20 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GettingReal
+namespace WPFapp
 {
     public class Employee
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string Role { get; set; }
 
-        public Employee(int id, string name, string role)  
+        public Employee(int id, string firstname, string lastname, string role)  
         {  
             Id = id;
-            Name = name;
+            FirstName = firstname;
+            LastName = lastname;
             Role = role;
         }
     }

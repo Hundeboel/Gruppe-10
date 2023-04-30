@@ -62,7 +62,7 @@ namespace WPFapp
 
         private void TextBox_FirstName_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            controller.CurrentInstance.FirstName = TextBox_FirstName.Text
         }
 
         private void TextBox_LastName_TextChanged(object sender, TextChangedEventArgs e)
