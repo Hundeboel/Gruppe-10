@@ -38,6 +38,15 @@ namespace WPFapp
             controller.AddInstance();
             Label_Count.Content = controller.InstanceCount.ToString();
             Label_Index.Content = controller.InstanceIndex.ToString();
+
+            if (controller.InstanceIndex > 0)
+            {
+                Button_Prev.IsEnabled = true;
+            }
+            Button_Next.IsEnabled = false;
+
+            enabledTextboxes();
+            clearTextboxes();
         }
 
         private void Button_Edit_Click(object sender, RoutedEventArgs e)
@@ -50,6 +59,15 @@ namespace WPFapp
             controller.PrevInstance();
             Label_Count.Content = controller.InstanceCount.ToString();
             Label_Index.Content = controller.InstanceIndex.ToString();
+            disabledTextboxes();
+            updateTextbboxes();
+
+            Button_Next.IsEnabled = true;
+
+            if (controller.InstanceIndex == 0)
+            {
+                Button_Prev.IsEnabled = false;
+            }
         }
 
         private void Button_Next_Click(object sender, RoutedEventArgs e)
@@ -57,6 +75,15 @@ namespace WPFapp
             controller.NextInstance();
             Label_Count.Content = controller.InstanceCount.ToString();
             Label_Index.Content = controller.InstanceIndex.ToString();
+            disabledTextboxes();
+            updateTextbboxes();
+
+            Button_Prev.IsEnabled = true;
+
+            if (controller.InstanceIndex == controller.InstanceCount - 1)
+            {
+                Button_Next.IsEnabled = false;
+            }
         }
 
         private void TextBox_Resource_TextChanged(object sender, TextChangedEventArgs e)
@@ -78,5 +105,39 @@ namespace WPFapp
         {
 
         }
+        private void enabledTextboxes()
+        {
+            TextBox_Resource.IsEnabled = true;
+            TextBox_Project.IsEnabled = true;
+            TextBox_Periode.IsEnabled = true;
+            TextBox_Renter.IsEnabled = true;
+        }
+
+        private void disabledTextboxes()
+        {
+            TextBox_Resource.IsEnabled = false;
+            TextBox_Project.IsEnabled = false;
+            TextBox_Periode.IsEnabled = false;
+            TextBox_Renter.IsEnabled = false;
+        }
+
+        private void updateTextbboxes()
+        {
+            TextBox_Resource.Text = controller.CurrentInstance.FirstName;
+            TextBox_Project.Text = controller.CurrentInstance.LastName;
+            TextBox_Periode.Text = controller.CurrentInstance.Role;
+            TextBox_Renter.Text = controller.CurrentInstance.Id.ToString();
+        }
+
+        private void clearTextboxes()
+        {
+            TextBox_Resource.Text = string.Empty;
+            TextBox_Project.Text = string.Empty;
+            TextBox_Periode.Text = string.Empty;
+            TextBox_Renter.Text = string.Empty;
+        }
+
+
     }
 }
+

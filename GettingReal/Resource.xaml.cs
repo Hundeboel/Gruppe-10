@@ -38,6 +38,15 @@ namespace WPFapp
             controller.AddInstance();
             Label_Count.Content = controller.InstanceCount.ToString();
             Label_Index.Content = controller.InstanceIndex.ToString();
+
+            if (controller.InstanceIndex > 0)
+            {
+                Button_Prev.IsEnabled = true;
+            }
+            Button_Next.IsEnabled = false;
+
+            enabledTextboxes();
+            clearTextboxes();
         }
 
         private void Button_Edit_Click(object sender, RoutedEventArgs e)
@@ -50,6 +59,15 @@ namespace WPFapp
             controller.PrevInstance();
             Label_Count.Content = controller.InstanceCount.ToString();
             Label_Index.Content = controller.InstanceIndex.ToString();
+            disabledTextboxes();
+            updateTextbboxes();
+
+            Button_Next.IsEnabled = true;
+
+            if (controller.InstanceIndex == 0)
+            {
+                Button_Prev.IsEnabled = false;
+            }
         }
 
         private void Button_Next_Click(object sender, RoutedEventArgs e)
@@ -57,6 +75,15 @@ namespace WPFapp
             controller.NextInstance();
             Label_Count.Content = controller.InstanceCount.ToString();
             Label_Index.Content = controller.InstanceIndex.ToString();
+            disabledTextboxes();
+            updateTextbboxes();
+
+            Button_Prev.IsEnabled = true;
+
+            if (controller.InstanceIndex == controller.InstanceCount - 1)
+            {
+                Button_Next.IsEnabled = false;
+            }
         }
 
         private void TextBox_Name_TextChanged(object sender, TextChangedEventArgs e)
@@ -78,5 +105,39 @@ namespace WPFapp
         {
 
         }
+        private void enabledTextboxes()
+        {
+            TextBox_Name.IsEnabled = true;
+            TextBox_Type.IsEnabled = true;
+            TextBox_Status.IsEnabled = true;
+            TextBox_Amount.IsEnabled = true;
+        }
+
+        private void disabledTextboxes()
+        {
+            TextBox_Name.IsEnabled = false;
+            TextBox_Type.IsEnabled = false;
+            TextBox_Status.IsEnabled = false;
+            TextBox_Amount.IsEnabled = false;
+        }
+
+        private void updateTextbboxes()
+        {
+            TextBox_Name.Text = controller.CurrentInstance.FirstName;
+            TextBox_Type.Text = controller.CurrentInstance.LastName;
+            TextBox_Status.Text = controller.CurrentInstance.Role;
+            TextBox_Amount.Text = controller.CurrentInstance.Id.ToString();
+        }
+
+        private void clearTextboxes()
+        {
+            TextBox_Name.Text = string.Empty;
+            TextBox_Type.Text = string.Empty;
+            TextBox_Status.Text = string.Empty;
+            TextBox_Amount.Text = string.Empty;
+        }
+
+
     }
 }
+
