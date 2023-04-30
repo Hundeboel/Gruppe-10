@@ -48,12 +48,16 @@ namespace WPFapp
 
         private void Button_Prev_Click(object sender, RoutedEventArgs e)
         {
-
+            controller.PrevInstance();
+            Label_Count.Content = controller.InstanceCount.ToString();
+            Label_Index.Content = controller.InstanceIndex.ToString();
         }
 
         private void Button_Next_Click(object sender, RoutedEventArgs e)
         {
-
+            controller.NextInstance();
+            Label_Count.Content = controller.InstanceCount.ToString();
+            Label_Index.Content = controller.InstanceIndex.ToString();
         }
 
         private void TextBox_FirstName_TextChanged(object sender, TextChangedEventArgs e)

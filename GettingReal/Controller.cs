@@ -54,7 +54,16 @@ namespace WPFapp
             if(InstanceIndex < InstanceCount - 1)
             {
                 InstanceIndex++;
-                CurrentInstance = employeeRepo.GetEmployeeAtIndex(InstanceIndex- 1);
+                CurrentInstance = employeeRepo.GetEmployeeAtIndex(InstanceIndex);
+            }
+        }
+
+        public void PrevInstance()
+        {
+            if(InstanceIndex > 0) 
+            { 
+                InstanceIndex--;
+                CurrentInstance = employeeRepo.GetEmployeeAtIndex(InstanceIndex);
             }
         }
     }
