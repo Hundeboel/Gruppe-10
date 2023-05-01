@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\45281\\Source\\Repos\\Gruppe-10\\GettingReal\\WPFapp.csproj": {}
+    "C:\\Users\\45281\\source\\repos\\gettingreal\\GettingReal\\WPFapp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\45281\\Source\\Repos\\Gruppe-10\\GettingReal\\WPFapp.csproj": {
+    "C:\\Users\\45281\\source\\repos\\gettingreal\\GettingReal\\WPFapp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\45281\\Source\\Repos\\Gruppe-10\\GettingReal\\WPFapp.csproj",
+        "projectUniqueName": "C:\\Users\\45281\\source\\repos\\gettingreal\\GettingReal\\WPFapp.csproj",
         "projectName": "WPFapp",
-        "projectPath": "C:\\Users\\45281\\Source\\Repos\\Gruppe-10\\GettingReal\\WPFapp.csproj",
+        "projectPath": "C:\\Users\\45281\\source\\repos\\gettingreal\\GettingReal\\WPFapp.csproj",
         "packagesPath": "C:\\Users\\45281\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\45281\\Source\\Repos\\Gruppe-10\\GettingReal\\obj\\",
+        "outputPath": "C:\\Users\\45281\\source\\repos\\gettingreal\\GettingReal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\45281\\AppData\\Roaming\\NuGet\\NuGet.Config",
