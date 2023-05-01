@@ -218,5 +218,42 @@ namespace WPFapp
             TextBox_UNKNOWN.Text = string.Empty;
             CheckBox_Status.IsChecked = false;
         }
+
+        private void isInvis()
+        {
+            Label_FirstName.Visibility = Visibility.Collapsed;
+            Label_LastName.Visibility = Visibility.Collapsed;
+            Label_Role.Visibility = Visibility.Collapsed;
+            Label_UNKNOWN.Visibility = Visibility.Collapsed;
+            Label_Checkbox.Visibility = Visibility.Collapsed;
+            TextBox_FirstName.Visibility = Visibility.Collapsed;
+            TextBox_LastName.Visibility = Visibility.Collapsed;
+            ComboBox_Role.Visibility = Visibility.Collapsed;
+            TextBox_UNKNOWN.Visibility = Visibility.Collapsed;
+            CheckBox_Status.Visibility = Visibility.Collapsed;
+        }
+        private void isVis()
+        {
+            Label_FirstName.Visibility = Visibility.Visible;
+            Label_LastName.Visibility = Visibility.Visible;
+            Label_Role.Visibility = Visibility.Visible;
+            Label_UNKNOWN.Visibility = Visibility.Visible;
+            Label_Checkbox.Visibility = Visibility.Visible;
+            TextBox_FirstName.Visibility = Visibility.Visible;
+            TextBox_LastName.Visibility = Visibility.Visible;
+            ComboBox_Role.Visibility = Visibility.Visible;
+            TextBox_UNKNOWN.Visibility = Visibility.Visible;
+            CheckBox_Status.Visibility = Visibility.Visible;
+        }
+
+        private void CheckBox_IsInvis_Checked(object sender, RoutedEventArgs e)
+        {
+            isInvis();
+        }
+
+        private void CheckBox_IsInvis_Unchecked(object sender, RoutedEventArgs e)
+        {
+            isVis();
+        }
     }
 }
