@@ -20,7 +20,8 @@ namespace WPFapp
             Name = name;
             Type = type;
             Description = description;
-            Amount = amount;   
+            Amount = amount;
+            Console.WriteLine("Hello!");
         }
     }
 }

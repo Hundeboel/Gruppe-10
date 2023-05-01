@@ -8,19 +8,19 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\laur7\\.nuget\\packages\\": {}
+    "C:\\Users\\Hicmu\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\laur7\\Source\\Repos\\gettingreal\\GettingReal\\WPFapp.csproj",
+      "projectUniqueName": "C:\\Users\\Hicmu\\Source\\Repos\\gettingreal\\GettingReal\\WPFapp.csproj",
       "projectName": "WPFapp",
-      "projectPath": "C:\\Users\\laur7\\Source\\Repos\\gettingreal\\GettingReal\\WPFapp.csproj",
-      "packagesPath": "C:\\Users\\laur7\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\laur7\\Source\\Repos\\gettingreal\\GettingReal\\obj\\",
+      "projectPath": "C:\\Users\\Hicmu\\Source\\Repos\\gettingreal\\GettingReal\\WPFapp.csproj",
+      "packagesPath": "C:\\Users\\Hicmu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hicmu\\Source\\Repos\\gettingreal\\GettingReal\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\laur7\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Hicmu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
