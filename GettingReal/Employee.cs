@@ -14,15 +14,17 @@ namespace WPFapp
         public string LastName { get; set; }
         public string Role { get; set; }
         public bool Status { get; set; }
+        public DateTime Date { get; set; }
 
 
-        public Employee(int id, string firstname, string lastname, string role, bool status)  
+        public Employee(int id, string firstname, string lastname, string role, bool status, DateTime date)  
         {  
             Id = id;
             FirstName = firstname;
             LastName = lastname;
             Role = role;
             Status = status;
+            Date = date;
         }
     }
 }

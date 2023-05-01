@@ -182,6 +182,16 @@ namespace WPFapp
             }
         }
 
+        /*
+        <DatePicker x:Name="DatePicker_Date" HorizontalAlignment="Left" Margin="200,350,0,0" VerticalAlignment="Top" Width="120" IsEnabled="False" SelectedDateChanged="DataPicker_Date_SelectedDateChanged" FirstDayOfWeek="Monday"/>
+        private void DataPicker_Date_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (controller.InstanceIndex >= 0)
+            {
+                controller.CurrentInstance.Date = DataPicker_Date.SelectedDate.Value;
+            }
+        }*/
+
         private void enabledTextboxes() 
         {
             TextBox_FirstName.IsEnabled = true;
@@ -189,6 +199,7 @@ namespace WPFapp
             ComboBox_Role.IsEnabled = true;
             TextBox_UNKNOWN.IsEnabled = true;
             CheckBox_Status.IsEnabled = true;
+            
         }
 
         private void disabledTextboxes()
@@ -255,5 +266,7 @@ namespace WPFapp
         {
             isVis();
         }
+
+        
     }
 }
