@@ -20,6 +20,7 @@ namespace WPFapp
     public partial class Employee : Window
     {
         private Controller controller;
+        string s = "";
         public Employee()
         {
             InitializeComponent();
@@ -96,27 +97,40 @@ namespace WPFapp
         {
             controller.CurrentInstance.LastName = TextBox_LastName.Text;
         }
-
-        private void TextBox_Role_TextChanged(object sender, TextChangedEventArgs e)
+        private void ComboBox_Role_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            controller.CurrentInstance.Role = TextBox_Role.Text;
+            if(ComboBox_Role.SelectedItem != null)
+            {
+                string selectedRole = ComboBox_Role.SelectedItem.ToString();
+                if (selectedRole == "System.Windows.Controls.ComboBoxItem: Svend") { selectedRole = "Svend"; }
+                else if (selectedRole == "System.Windows.Controls.ComboBoxItem: Mester") { selectedRole = "Mester"; }
+                controller.CurrentInstance.Role = selectedRole;
+            }
+            
         }
-
         private void TextBox_UNKNOWN_TextChanged(object sender, TextChangedEventArgs e)
         {
+
             int a = 0;
             bool b = int.TryParse(TextBox_UNKNOWN.Text, out a);
-            if(b == true)
+            if (b == true)
             {
                 controller.CurrentInstance.Id = a;
             }
+            else if (TextBox_UNKNOWN.Text != "")
+            {
+                MessageBox.Show("ERROR: Numbers only");
+                TextBox_UNKNOWN.Text = s;
+                TextBox_UNKNOWN.CaretIndex = TextBox_UNKNOWN.Text.Length;
+            }
+            s = TextBox_UNKNOWN.Text;
         }
 
         private void enabledTextboxes() 
         {
             TextBox_FirstName.IsEnabled = true;
             TextBox_LastName.IsEnabled = true;
-            TextBox_Role.IsEnabled = true;
+            ComboBox_Role.IsEnabled = true;
             TextBox_UNKNOWN.IsEnabled = true;
         }
 
@@ -124,7 +138,7 @@ namespace WPFapp
         {
             TextBox_FirstName.IsEnabled = false;
             TextBox_LastName.IsEnabled = false;
-            TextBox_Role.IsEnabled = false;
+            ComboBox_Role.IsEnabled = false;
             TextBox_UNKNOWN.IsEnabled = false;
         }
 
@@ -132,7 +146,7 @@ namespace WPFapp
         {
             TextBox_FirstName.Text = controller.CurrentInstance.FirstName;
             TextBox_LastName.Text = controller.CurrentInstance.LastName;
-            TextBox_Role.Text = controller.CurrentInstance.Role;
+            ComboBox_Role.Text = controller.CurrentInstance.Role;
             TextBox_UNKNOWN.Text = controller.CurrentInstance.Id.ToString();
         }
 
@@ -140,8 +154,10 @@ namespace WPFapp
         {
             TextBox_FirstName.Text = string.Empty;
             TextBox_LastName.Text = string.Empty;
-            TextBox_Role.Text = string.Empty;
+            ComboBox_Role.Text = string.Empty;
             TextBox_UNKNOWN.Text = string.Empty;
         }
+
+
     }
 }

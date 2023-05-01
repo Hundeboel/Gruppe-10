@@ -18,7 +18,10 @@
         
         <TextBox x:Name="TextBox_FirstName" HorizontalAlignment="Left" Margin="200,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False" TextChanged="TextBox_FirstName_TextChanged"/>
         <TextBox x:Name="TextBox_LastName" HorizontalAlignment="Left" Margin="200,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False" TextChanged="TextBox_LastName_TextChanged"/>
-        <TextBox x:Name="TextBox_Role" HorizontalAlignment="Left" Margin="200,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False" TextChanged="TextBox_Role_TextChanged"/>
+        <ComboBox x:Name="ComboBox_Role" HorizontalAlignment="Left" Margin="200,200,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_Role_SelectionChanged" IsEnabled="False">
+            <ComboBoxItem>Svend</ComboBoxItem>
+            <ComboBoxItem>Mester</ComboBoxItem>
+        </ComboBox>
         <TextBox x:Name="TextBox_UNKNOWN" HorizontalAlignment="Left" Margin="200,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False" TextChanged="TextBox_UNKNOWN_TextChanged"/>
         
         <Button x:Name="Button_NewEmployee" Content="Ny ansat" HorizontalAlignment="Left" Margin="100,300,0,0" VerticalAlignment="Top" Width="100" Click="Button_NewEmployee_Click"/>
