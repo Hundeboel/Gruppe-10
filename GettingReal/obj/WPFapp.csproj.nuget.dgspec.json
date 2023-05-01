@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hicmu\\Source\\Repos\\gettingreal\\GettingReal\\WPFapp.csproj": {}
+    "C:\\Users\\45281\\Source\\Repos\\Gruppe-10\\GettingReal\\WPFapp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hicmu\\Source\\Repos\\gettingreal\\GettingReal\\WPFapp.csproj": {
+    "C:\\Users\\45281\\Source\\Repos\\Gruppe-10\\GettingReal\\WPFapp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hicmu\\Source\\Repos\\gettingreal\\GettingReal\\WPFapp.csproj",
+        "projectUniqueName": "C:\\Users\\45281\\Source\\Repos\\Gruppe-10\\GettingReal\\WPFapp.csproj",
         "projectName": "WPFapp",
-        "projectPath": "C:\\Users\\Hicmu\\Source\\Repos\\gettingreal\\GettingReal\\WPFapp.csproj",
-        "packagesPath": "C:\\Users\\Hicmu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hicmu\\Source\\Repos\\gettingreal\\GettingReal\\obj\\",
+        "projectPath": "C:\\Users\\45281\\Source\\Repos\\Gruppe-10\\GettingReal\\WPFapp.csproj",
+        "packagesPath": "C:\\Users\\45281\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\45281\\Source\\Repos\\Gruppe-10\\GettingReal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Hicmu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\45281\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,7 +58,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
