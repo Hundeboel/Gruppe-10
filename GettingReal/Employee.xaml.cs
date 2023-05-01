@@ -167,12 +167,28 @@ namespace WPFapp
             }
         }
 
+        private void CheckBox_Status_Checked(object sender, RoutedEventArgs e)
+        {
+            if (controller.InstanceIndex >= 0)
+            {
+                controller.CurrentInstance.Status = true;
+            }
+        }
+        private void CheckBox_Status_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (controller.InstanceIndex >= 0)
+            {
+                controller.CurrentInstance.Status = false;
+            }
+        }
+
         private void enabledTextboxes() 
         {
             TextBox_FirstName.IsEnabled = true;
             TextBox_LastName.IsEnabled = true;
             ComboBox_Role.IsEnabled = true;
             TextBox_UNKNOWN.IsEnabled = true;
+            CheckBox_Status.IsEnabled = true;
         }
 
         private void disabledTextboxes()
@@ -181,6 +197,7 @@ namespace WPFapp
             TextBox_LastName.IsEnabled = false;
             ComboBox_Role.IsEnabled = false;
             TextBox_UNKNOWN.IsEnabled = false;
+            CheckBox_Status.IsEnabled = false;
         }
 
         private void updateTextbboxes()
@@ -189,6 +206,8 @@ namespace WPFapp
             TextBox_LastName.Text = controller.CurrentInstance.LastName;
             ComboBox_Role.Text = controller.CurrentInstance.Role;
             TextBox_UNKNOWN.Text = controller.CurrentInstance.Id.ToString();
+            if(controller.CurrentInstance.Status == true) { CheckBox_Status.IsChecked = true; }
+            else { CheckBox_Status.IsChecked = false;}
         }
 
         private void clearTextboxes()
@@ -197,8 +216,7 @@ namespace WPFapp
             TextBox_LastName.Text = string.Empty;
             ComboBox_Role.Text = string.Empty;
             TextBox_UNKNOWN.Text = string.Empty;
+            CheckBox_Status.IsChecked = false;
         }
-
-        
     }
 }
