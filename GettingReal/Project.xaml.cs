@@ -138,7 +138,12 @@ namespace WPFapp
             TextBox_EndDate.Text = string.Empty;
         }
 
-
+        private void Button_ShowAllActive_Click(object sender, RoutedEventArgs e)
+        {
+            var newWindow = new ActiveProjects();
+            newWindow.Show();
+            this.Close();
+        }
     }
 }
 

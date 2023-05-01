@@ -15,6 +15,12 @@ namespace WPFapp
         public int InstanceCount { get; private set; }
         public int InstanceIndex { get; private set; }
 
+        private ProjectRepo projectRepo;
+        public Project CurrentProject { get; private set; }
+        public int ProjectCount { get; private set; }
+        public int ProjectIndex { get; private set; }
+
+
         public Controller()
         {
             CurrentInstance = null;

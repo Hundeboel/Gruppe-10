@@ -60,3 +60,17 @@ C:\Users\Hicmu\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\ref
 C:\Users\Hicmu\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\WPFapp.pdb
 C:\Users\Hicmu\Source\Repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\WPFapp.genruntimeconfig.cache
 C:\Users\Hicmu\Source\Repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\ref\WPFapp.dll
+C:\Users\danie\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\WPFapp.csproj.AssemblyReference.cache
+C:\Users\danie\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\ActiveProjects.g.cs
+C:\Users\danie\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\Employee.g.cs
+C:\Users\danie\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\Fastener.g.cs
+C:\Users\danie\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\danie\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\Project.g.cs
+C:\Users\danie\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\Rental.g.cs
+C:\Users\danie\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\Resource.g.cs
+C:\Users\danie\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\danie\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\WPFapp_MarkupCompile.cache
+C:\Users\danie\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\WPFapp_MarkupCompile.lref
+C:\Users\danie\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\WPFapp.dll
+C:\Users\danie\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\refint\WPFapp.dll
+C:\Users\danie\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\WPFapp.pdb

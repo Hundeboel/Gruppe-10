@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Hicmu\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\
+C:\Users\danie\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\
 WPFapp
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\Hicmu\source\repos\gettingreal\GettingReal\App.xaml
-6-332227431
+C:\Users\danie\source\repos\gettingreal\GettingReal\App.xaml
+7-924870399
 
-192070550255
+20-1719732512
 194237474483
-Employee.xaml;Fastener.xaml;MainWindow.xaml;Project.xaml;Rental.xaml;Resource.xaml;
+ActiveProjects.xaml;Employee.xaml;Fastener.xaml;MainWindow.xaml;Project.xaml;Rental.xaml;Resource.xaml;
 
-False
+True
 
