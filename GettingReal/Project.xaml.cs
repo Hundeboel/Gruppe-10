@@ -51,7 +51,7 @@ namespace WPFapp
 
         private void Button_Edit_Click(object sender, RoutedEventArgs e)
         {
-
+            enabledTextboxes();
         }
 
         private void Button_Prev_Click(object sender, RoutedEventArgs e)
@@ -138,9 +138,36 @@ namespace WPFapp
             TextBox_EndDate.Text = string.Empty;
         }
 
-        private void Button_DeleteProject_Click()
+        private void Button_DeleteProject_Click(object sender, RoutedEventArgs e)
         {
+            controller.DeleteProject();
+            
+            Label_Count.Content = "Count Project " + controller.ProjectCount.ToString();
+            Label_Index.Content = "Index " + controller.ProjectIndex.ToString;
 
+            if (controller.ProjectIndex < 0) 
+            { 
+                Button_DeleteProject.IsEnabled = false;
+                Button_Prev.IsEnabled = false;
+                Button_Next.IsEnabled = false;
+
+                TextBox_Name.IsEnabled = false;
+                TextBox_Status.IsEnabled = false;
+                TextBox_StartDate.IsEnabled = false;
+                TextBox_EndDate.IsEnabled = false;
+
+                TextBox_Name.Text = string.Empty;
+                TextBox_Status.Text = string.Empty;
+                TextBox_StartDate.Text = string.Empty;
+                TextBox_EndDate.Text = string.Empty;
+            }
+            else
+            {
+                TextBox_Name.Text = controller.CurrentProject.Name;
+                TextBox_Status.Text = controller.CurrentProject.Status;
+                TextBox_StartDate.Text = controller.CurrentProject.StartDate;
+                TextBox_EndDate.Text = controller.CurrentProject.EndDate;
+            }
         }
     }
 }
