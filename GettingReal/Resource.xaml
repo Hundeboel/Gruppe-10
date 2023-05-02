@@ -27,6 +27,6 @@
         <Button x:Name="Button_Next" Content="Næste resource" HorizontalAlignment="Left" Margin="100,450,0,0" VerticalAlignment="Top" Width="120" Click="Button_Next_Click" IsEnabled="False"/>
         <Button x:Name="Button_ShowResources" Content="Vis resourcer" HorizontalAlignment="Left" Margin="100,500,0,0" VerticalAlignment="Top" Width="120" Click="Button_Next_Click" IsEnabled="False"/>
 
-        <Button x:Name="Button_MainPage" Content="Main Page" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Click="Button_MainPage_Click"/>
+        <Button x:Name="Button_MainPage_Resource" Content="Main Page" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Click="Button_MainPage_Click"/>
     </Grid>
 </Window>
