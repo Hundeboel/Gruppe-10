@@ -18,7 +18,7 @@ namespace WPFapp
         public Controller()
         {
             CurrentInstance = null;
-            employeeRepo= new EmployeeRepo();
+            employeeRepo = new EmployeeRepo();
             InstanceCount = 0;
             InstanceIndex = -1;
         }
@@ -40,7 +40,7 @@ namespace WPFapp
                 employeeRepo.RemoveEmployee(CurrentInstance);
 
                 InstanceCount = employeeRepo.Count;
-                if(InstanceIndex == InstanceCount)
+                if (InstanceIndex == InstanceCount)
                 {
                     InstanceIndex--;
                 }
@@ -51,7 +51,7 @@ namespace WPFapp
 
         public void NextInstance()
         {
-            if(InstanceIndex < InstanceCount - 1)
+            if (InstanceIndex < InstanceCount - 1)
             {
                 InstanceIndex++;
                 CurrentInstance = employeeRepo.GetEmployeeAtIndex(InstanceIndex);
@@ -60,8 +60,8 @@ namespace WPFapp
 
         public void PrevInstance()
         {
-            if(InstanceIndex > 0) 
-            { 
+            if (InstanceIndex > 0)
+            {
                 InstanceIndex--;
                 CurrentInstance = employeeRepo.GetEmployeeAtIndex(InstanceIndex);
             }

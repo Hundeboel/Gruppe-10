@@ -36,14 +36,6 @@ namespace WPFapp
             return employeeResultat;
         }
 
-        public void RemoveEmployeeAtIndex(int index)
-        {
-            if(index >= 0 && index < employees.Count)
-            {
-                employees.RemoveAt(index);
-            }
-        }
-
         public void RemoveEmployee(Employee employee)
         {
             if (employee != null)
