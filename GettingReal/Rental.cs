@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace WPFapp
 {
-    public class RentalClass
+    public partial class Rental
     {
-        public ProjectClass Project { get; set; }
-        public ResourceClass Resource { get; set; }
+        public Project Project { get; set; }
+        public Resource Resource { get; set; }
         public Employee Rentee { get; set; }
         public TimeSpan Timeframe { get; set; }
     }

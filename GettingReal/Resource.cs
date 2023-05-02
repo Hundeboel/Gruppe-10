@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WPFapp
 {
-    public class ResourceClass
+    public partial class Resource
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -15,7 +15,7 @@ namespace WPFapp
         public bool Rented { get; set; }
 
 
-        public ResourceClass (int id, string name, string type, int amount, bool rented)
+        public Resource (int id, string name, string type, int amount, bool rented)
         {
             Id = id;
             Name = name;

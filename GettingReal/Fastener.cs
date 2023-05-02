@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WPFapp
 {
-    public class FastenerClass
+    public partial class Fastener
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -14,7 +14,7 @@ namespace WPFapp
         public string Description { get; set; }
         public int Amount { get; set; }
 
-        public FastenerClass(int id, string name, string type, string description,int amount) 
+        public Fastener(int id, string name, string type, string description,int amount) 
         {
             Id = id;
             Name = name;
