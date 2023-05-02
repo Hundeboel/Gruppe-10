@@ -8,19 +8,24 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\45281\\.nuget\\packages\\": {}
+    "C:\\Users\\danie\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\45281\\source\\repos\\gettingreal\\GettingReal\\WPFapp.csproj",
+      "projectUniqueName": "C:\\Users\\danie\\source\\repos\\gettingreal\\GettingReal\\WPFapp.csproj",
       "projectName": "WPFapp",
-      "projectPath": "C:\\Users\\45281\\source\\repos\\gettingreal\\GettingReal\\WPFapp.csproj",
-      "packagesPath": "C:\\Users\\45281\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\45281\\source\\repos\\gettingreal\\GettingReal\\obj\\",
+      "projectPath": "C:\\Users\\danie\\source\\repos\\gettingreal\\GettingReal\\WPFapp.csproj",
+      "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\danie\\source\\repos\\gettingreal\\GettingReal\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\45281\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -64,7 +69,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

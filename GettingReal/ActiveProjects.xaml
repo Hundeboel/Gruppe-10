@@ -1,0 +1,70 @@
+﻿<Window x:Class="WPFapp.ActiveProjects"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFapp"
+        mc:Ignorable="d"
+        Title="ActiveProjects" Height="650" Width="400" Background="AliceBlue">
+    <Grid>
+        <Button x:Name="Button_MainPage" Content="Main Page" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Click="Button_MainPage_Click"/>
+        <Button x:Name="Button_Prev10" Content="Forrige 10" HorizontalAlignment="Left" Margin="25,400,0,0" VerticalAlignment="Top" Width="80" Click="Button_MainPage_Click"/>
+        <Button x:Name="Button_Next10" Content="Næste 10" HorizontalAlignment="Left" Margin="125,400,0,0" VerticalAlignment="Top" Width="80" Click="Button_MainPage_Click"/>
+        <Button x:Name="Button_R1" Content="Redigér" HorizontalAlignment="Left" Margin="250,100,0,0" VerticalAlignment="Top" Width="50" Click="Button_MainPage_Click"/>
+        <Button x:Name="Button_R2" Content="Redigér" HorizontalAlignment="Left" Margin="250,125,0,0" VerticalAlignment="Top" Width="50" Click="Button_MainPage_Click"/>
+        <Button x:Name="Button_R3" Content="Redigér" HorizontalAlignment="Left" Margin="250,150,0,0" VerticalAlignment="Top" Width="50" Click="Button_MainPage_Click"/>
+        <Button x:Name="Button_R4" Content="Redigér" HorizontalAlignment="Left" Margin="250,175,0,0" VerticalAlignment="Top" Width="50" Click="Button_MainPage_Click"/>
+        <Button x:Name="Button_R5" Content="Redigér" HorizontalAlignment="Left" Margin="250,200,0,0" VerticalAlignment="Top" Width="50" Click="Button_MainPage_Click"/>
+        <Button x:Name="Button_R6" Content="Redigér" HorizontalAlignment="Left" Margin="250,225,0,0" VerticalAlignment="Top" Width="50" Click="Button_MainPage_Click"/>
+        <Button x:Name="Button_R7" Content="Redigér" HorizontalAlignment="Left" Margin="250,250,0,0" VerticalAlignment="Top" Width="50" Click="Button_MainPage_Click"/>
+        <Button x:Name="Button_R8" Content="Redigér" HorizontalAlignment="Left" Margin="250,275,0,0" VerticalAlignment="Top" Width="50" Click="Button_MainPage_Click"/>
+        <Button x:Name="Button_R9" Content="Redigér" HorizontalAlignment="Left" Margin="250,300,0,0" VerticalAlignment="Top" Width="50" Click="Button_MainPage_Click"/>
+        <Button x:Name="Button_R10" Content="Redigér" HorizontalAlignment="Left" Margin="250,325,0,0" VerticalAlignment="Top" Width="50" Click="Button_MainPage_Click"/>
+
+        <Label x:Name="Label_Page" Content="Side 1" HorizontalAlignment="Left" Margin="300,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Id" Content="Id" HorizontalAlignment="Left" Margin="25,75,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Name" Content="Navn" HorizontalAlignment="Left" Margin="75,75,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Type" Content="Type" HorizontalAlignment="Left" Margin="125,75,0,0" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="TextBox_Id1" HorizontalAlignment="Left" Margin="25,100,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="TextBox_Name1" HorizontalAlignment="Left" Margin="75,100,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="TextBox_Type1" HorizontalAlignment="Left" Margin="125,100,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="100"/>
+        
+        <TextBox x:Name="Id2" HorizontalAlignment="Left" Margin="25,125,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="TextBox_Name2" HorizontalAlignment="Left" Margin="75,125,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="TextBox_Type2" HorizontalAlignment="Left" Margin="125,125,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="100"/>
+        
+        <TextBox x:Name="Id3" HorizontalAlignment="Left" Margin="25,150,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="TextBox_Name3" HorizontalAlignment="Left" Margin="75,150,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="TextBox_Type3" HorizontalAlignment="Left" Margin="125,150,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="100"/>
+        
+        <TextBox x:Name="Id4" HorizontalAlignment="Left" Margin="25,175,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="TextBox_Name4" HorizontalAlignment="Left" Margin="75,175,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="TextBox_Type4" HorizontalAlignment="Left" Margin="125,175,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="100"/>
+        
+        <TextBox x:Name="Id5" HorizontalAlignment="Left" Margin="25,200,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="TextBox_Name5" HorizontalAlignment="Left" Margin="75,200,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="TextBox_Type5" HorizontalAlignment="Left" Margin="125,200,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="100"/>
+        
+        <TextBox x:Name="Id6" HorizontalAlignment="Left" Margin="25,225,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="TextBox_Name6" HorizontalAlignment="Left" Margin="75,225,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="TextBox_Type6" HorizontalAlignment="Left" Margin="125,225,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="100"/>
+        
+        <TextBox x:Name="Id7" HorizontalAlignment="Left" Margin="25,250,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="TextBox_Name7" HorizontalAlignment="Left" Margin="75,250,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="TextBox_Type7" HorizontalAlignment="Left" Margin="125,250,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="100"/>
+        
+        <TextBox x:Name="Id8" HorizontalAlignment="Left" Margin="25,275,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="TextBox_Name8" HorizontalAlignment="Left" Margin="75,275,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="TextBox_Type8" HorizontalAlignment="Left" Margin="125,275,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="100"/>
+        
+        <TextBox x:Name="Id9" HorizontalAlignment="Left" Margin="25,300,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="TextBox_Name9" HorizontalAlignment="Left" Margin="75,300,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="TextBox_Type9" HorizontalAlignment="Left" Margin="125,300,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="100"/>
+        
+        <TextBox x:Name="Id10" HorizontalAlignment="Left" Margin="25,325,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="TextBox_Name10" HorizontalAlignment="Left" Margin="75,325,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="TextBox_Type10" HorizontalAlignment="Left" Margin="125,325,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="100"/>
+       
+    </Grid>
+</Window>
