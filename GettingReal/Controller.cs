@@ -11,18 +11,87 @@ namespace WPFapp
         //Falsk kode til at koble GUI op
         //Bruger employeeRepo (+ employee) 
         private EmployeeRepo employeeRepo;
+        public Employee CurrentEmployee { get; private set; }
+        public int EmployeeCount { get; private set; }
+        public int EmployeeIndex { get; private set; }
+
+        //Ikke koblet til methods i nu
+        private ResourceRepo resourceRepo;
+        public Resource CurrentResource { get; private set; }
+        public int ResourceCount { get; private set; }
+        public int ResourceIndex { get; private set; }
+
         public Employee CurrentInstance { get; private set; }
         public int InstanceCount { get; private set; }
         public int InstanceIndex { get; private set; }
 
+
         public Controller()
         {
-            CurrentInstance = null;
+            CurrentEmployee = null;
+            CurrentResource = null;
+
             employeeRepo = new EmployeeRepo();
+            resourceRepo = new ResourceRepo();
+
+            EmployeeCount = 0;
+            EmployeeIndex = -1;
+            ResourceCount = 0;
+            ResourceIndex = -1;
+
+            //For GUI
+            CurrentInstance = null;
             InstanceCount = 0;
             InstanceIndex = -1;
         }
 
+        public void AddEmployee()
+        {
+            Employee employee = new Employee();
+            CurrentEmployee = employee;
+            employeeRepo.AddEmployee(employee);
+            EmployeeCount = employeeRepo.Count;
+            EmployeeIndex = EmployeeCount - 1;
+
+        }
+
+        public void RemoveEmployee()
+        {
+            if (CurrentEmployee != null)
+            {
+                employeeRepo.RemoveEmployee(CurrentEmployee);
+
+                EmployeeCount = employeeRepo.Count;
+                if (EmployeeIndex == EmployeeCount)
+                {
+                    EmployeeIndex--;
+                }
+
+                CurrentEmployee = employeeRepo.GetEmployeeAtIndex(EmployeeIndex);
+            }
+        }
+
+        public void NextEmployee()
+        {
+            if (EmployeeIndex < EmployeeCount - 1)
+            {
+                EmployeeIndex++;
+                CurrentEmployee = employeeRepo.GetEmployeeAtIndex(EmployeeIndex);
+            }
+        }
+
+        public void PrevEmployee()
+        {
+            if (EmployeeIndex > 0)
+            {
+                EmployeeIndex--;
+                CurrentEmployee = employeeRepo.GetEmployeeAtIndex(EmployeeIndex);
+            }
+        }
+
+
+        //For GUI which is not yet added to the controller
+        #region 
         public void AddInstance()
         {
             Employee employee = new Employee();
@@ -32,7 +101,6 @@ namespace WPFapp
             InstanceIndex = InstanceCount - 1;
 
         }
-
         public void RemoveInstance()
         {
             if (CurrentInstance != null)
@@ -66,5 +134,6 @@ namespace WPFapp
                 CurrentInstance = employeeRepo.GetEmployeeAtIndex(InstanceIndex);
             }
         }
+        #endregion
     }
 }
