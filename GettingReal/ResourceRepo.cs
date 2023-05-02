@@ -25,7 +25,7 @@ namespace WPFapp
             resources.Add(resource);
         }
 
-        public Resource GetResourceAtIndex(int index)
+        public Resource GetResourceByType(int index)
         {
             Resource resourceResult = null;
             if (index >= 0 && index < resources.Count)
@@ -34,14 +34,6 @@ namespace WPFapp
             }
 
             return resourceResult;
-        }
-
-        public void RemoveResourceAtIndex(int index)
-        {
-            if (index >= 0 && index < resources.Count)
-            {
-                resources.RemoveAt(index);
-            }
         }
 
         public void RemoveResource(Resource resource)
