@@ -182,15 +182,15 @@ namespace WPFapp
             }
         }
 
-        /*
-        <DatePicker x:Name="DatePicker_Date" HorizontalAlignment="Left" Margin="200,350,0,0" VerticalAlignment="Top" Width="120" IsEnabled="False" SelectedDateChanged="DataPicker_Date_SelectedDateChanged" FirstDayOfWeek="Monday"/>
+        
+        
         private void DataPicker_Date_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (controller.InstanceIndex >= 0)
+            if (controller.InstanceIndex >= 0 && DatePicker_Date.SelectedDate != null)
             {
-                controller.CurrentInstance.Date = DataPicker_Date.SelectedDate.Value;
+                controller.CurrentInstance.Date = DatePicker_Date.SelectedDate.Value;
             }
-        }*/
+        }
 
         private void enabledTextboxes()
         {
@@ -199,6 +199,7 @@ namespace WPFapp
             ComboBox_Role.IsEnabled = true;
             TextBox_UNKNOWN.IsEnabled = true;
             CheckBox_Status.IsEnabled = true;
+            DatePicker_Date.IsEnabled = true;
 
         }
 
@@ -209,6 +210,7 @@ namespace WPFapp
             ComboBox_Role.IsEnabled = false;
             TextBox_UNKNOWN.IsEnabled = false;
             CheckBox_Status.IsEnabled = false;
+            DatePicker_Date.IsEnabled= false;
         }
 
         private void updateTextbboxes()
@@ -219,6 +221,7 @@ namespace WPFapp
             TextBox_UNKNOWN.Text = controller.CurrentInstance.Id.ToString();
             if (controller.CurrentInstance.Status == true) { CheckBox_Status.IsChecked = true; }
             else { CheckBox_Status.IsChecked = false; }
+            DatePicker_Date.SelectedDate = controller.CurrentInstance.Date;
         }
 
         private void clearTextboxes()
@@ -228,6 +231,7 @@ namespace WPFapp
             ComboBox_Role.Text = string.Empty;
             TextBox_UNKNOWN.Text = string.Empty;
             CheckBox_Status.IsChecked = false;
+            DatePicker_Date.SelectedDate = null;
         }
 
         private void isInvis()
@@ -237,11 +241,13 @@ namespace WPFapp
             Label_Role.Visibility = Visibility.Collapsed;
             Label_UNKNOWN.Visibility = Visibility.Collapsed;
             Label_Checkbox.Visibility = Visibility.Collapsed;
+            Label_DatePicker.Visibility = Visibility.Collapsed;
             TextBox_FirstName.Visibility = Visibility.Collapsed;
             TextBox_LastName.Visibility = Visibility.Collapsed;
             ComboBox_Role.Visibility = Visibility.Collapsed;
             TextBox_UNKNOWN.Visibility = Visibility.Collapsed;
             CheckBox_Status.Visibility = Visibility.Collapsed;
+            DatePicker_Date.Visibility = Visibility.Collapsed;
         }
         private void isVis()
         {
@@ -250,11 +256,13 @@ namespace WPFapp
             Label_Role.Visibility = Visibility.Visible;
             Label_UNKNOWN.Visibility = Visibility.Visible;
             Label_Checkbox.Visibility = Visibility.Visible;
+            Label_DatePicker.Visibility= Visibility.Visible;
             TextBox_FirstName.Visibility = Visibility.Visible;
             TextBox_LastName.Visibility = Visibility.Visible;
             ComboBox_Role.Visibility = Visibility.Visible;
             TextBox_UNKNOWN.Visibility = Visibility.Visible;
             CheckBox_Status.Visibility = Visibility.Visible;
+            DatePicker_Date.Visibility= Visibility.Visible;
         }
 
         private void CheckBox_IsInvis_Checked(object sender, RoutedEventArgs e)
