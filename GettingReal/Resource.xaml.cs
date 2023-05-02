@@ -86,6 +86,13 @@ namespace WPFapp
             }
         }
 
+        private void Button_ShowResources_Click(object sender, RoutedEventArgs e)
+        {
+            var newWindow = new AllResources();
+            newWindow.Show();
+            this.Close();
+        }
+
         private void TextBox_Name_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -136,8 +143,6 @@ namespace WPFapp
             TextBox_Status.Text = string.Empty;
             TextBox_Amount.Text = string.Empty;
         }
-
-
     }
 }
 

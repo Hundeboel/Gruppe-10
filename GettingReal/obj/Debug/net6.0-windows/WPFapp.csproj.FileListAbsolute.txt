@@ -93,3 +93,5 @@ C:\Users\45281\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\WPF
 C:\Users\45281\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\ref\WPFapp.dll
 C:\Users\laur7\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\AllResources.g.cs
 C:\Users\laur7\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\AllResources.baml
+C:\Users\45281\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\AllResources.g.cs
+C:\Users\45281\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\AllResources.baml
