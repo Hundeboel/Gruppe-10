@@ -28,7 +28,7 @@
         </ComboBox>
         <TextBox x:Name="TextBox_UNKNOWN" HorizontalAlignment="Left" Margin="200,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False" TextChanged="TextBox_UNKNOWN_TextChanged"/>
         <CheckBox x:Name="CheckBox_Status" HorizontalAlignment="Left" Margin="200,305,0,0" VerticalAlignment="Top" IsEnabled="False" Checked="CheckBox_Status_Checked" Unchecked="CheckBox_Status_Unchecked"/>
-        <DatePicker x:Name="DatePicker_Date" HorizontalAlignment="Left" Margin="200,350,0,0" VerticalAlignment="Top" Width="120" IsEnabled="False" SelectedDateChanged="DataPicker_Date_SelectedDateChanged" FirstDayOfWeek="Monday"/>
+        <DatePicker x:Name="DatePicker_Date" HorizontalAlignment="Left" Margin="200,350,0,0" VerticalAlignment="Top" Width="120" IsEnabled="False" SelectedDateChanged="DatePicker_Date_SelectedDateChanged" FirstDayOfWeek="Monday"/>
 
         <Button x:Name="Button_NewEmployee" Content="Ny ansat" HorizontalAlignment="Left" Margin="0,100,0,0" VerticalAlignment="Top" Width="80" Click="Button_NewEmployee_Click"/>
         <Button x:Name="Button_Edit" Content="Redigér" HorizontalAlignment="Left" Margin="0,150,0,0" VerticalAlignment="Top" Width="80" Click="Button_Edit_Click" IsEnabled="False"/>
