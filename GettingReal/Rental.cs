@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WPFapp
 {
-    public class RentalClass
+    public class Rental
     {
         public ProjectClass Project { get; set; }
         public ResourceClass Resource { get; set; }
