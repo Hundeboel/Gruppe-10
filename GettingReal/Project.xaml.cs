@@ -138,7 +138,10 @@ namespace WPFapp
             TextBox_EndDate.Text = string.Empty;
         }
 
+        private void Button_DeleteProject_Click()
+        {
 
+        }
     }
 }
 

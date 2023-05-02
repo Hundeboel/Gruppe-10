@@ -22,9 +22,10 @@
         <TextBox x:Name="TextBox_EndDate" HorizontalAlignment="Left" Margin="200,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_EndDate_TextChanged" IsEnabled="False"/>
 
         <Button x:Name="Button_NewProject" Content="Nyt projekt" HorizontalAlignment="Left" Margin="100,300,0,0" VerticalAlignment="Top" Width="100" Click="Button_NewProject_Click"/>
-        <Button x:Name="Button_Edit" Content="Redigér" HorizontalAlignment="Left" Margin="100,350,0,0" VerticalAlignment="Top" Width="100" Click="Button_Edit_Click" IsEnabled="False"/>
-        <Button x:Name="Button_Prev" Content="Tidligere projekt" HorizontalAlignment="Left" Margin="100,400,0,0" VerticalAlignment="Top" Width="100" Click="Button_Prev_Click" IsEnabled="False"/>
-        <Button x:Name="Button_Next" Content="Næste projekt" HorizontalAlignment="Left" Margin="100,450,0,0" VerticalAlignment="Top" Width="100" Click="Button_Next_Click" IsEnabled="False"/>
+        <Button x:Name="Button_DeleteProject" Content="Slet" HorizontalAlignment="Left" Margin="100,350,0,0" VerticalAlignment="Top" Width="100" Click="Button_DeleteProject_Click"/>
+        <Button x:Name="Button_Edit" Content="Redigér" HorizontalAlignment="Left" Margin="100,400,0,0" VerticalAlignment="Top" Width="100" Click="Button_Edit_Click" IsEnabled="False"/>
+        <Button x:Name="Button_Prev" Content="Tidligere projekt" HorizontalAlignment="Left" Margin="100,450,0,0" VerticalAlignment="Top" Width="100" Click="Button_Prev_Click" IsEnabled="False"/>
+        <Button x:Name="Button_Next" Content="Næste projekt" HorizontalAlignment="Left" Margin="100,500,0,0" VerticalAlignment="Top" Width="100" Click="Button_Next_Click" IsEnabled="False"/>
 
         <Button x:Name="Button_MainPage" Content="Main Page" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Click="Button_MainPage_Click"/>
     </Grid>
