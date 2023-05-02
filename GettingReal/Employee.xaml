@@ -10,6 +10,7 @@
     <Grid>
         <Label x:Name="Label_Index" Content="Index" HorizontalAlignment="Left" Margin="100,50,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Label_Count" Content="Count" HorizontalAlignment="Left" Margin="200,50,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_IsInvis" Content="IsInvis?" HorizontalAlignment="Left" Margin="285,30,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="CheckBox_IsInvis" HorizontalAlignment="Left" Margin="300,55,0,0" VerticalAlignment="Top" Checked="CheckBox_IsInvis_Checked" Unchecked="CheckBox_IsInvis_Unchecked"/>
 
         <Label x:Name="Label_FirstName" Content="Fornavn" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top"/>

@@ -37,16 +37,16 @@ namespace WPFapp
 
         private void Button_NewEmployee_Click(object sender, RoutedEventArgs e)
         {
-            controller.AddInstance();
-            Label_Count.Content = controller.InstanceCount.ToString();
-            Label_Index.Content = controller.InstanceIndex.ToString();
+            controller.AddEmployee();
+            Label_Count.Content = controller.EmployeeCount.ToString();
+            Label_Index.Content = controller.EmployeeIndex.ToString();
 
-            if (controller.InstanceIndex > 0)
+            if (controller.EmployeeIndex > 0)
             {
                 Button_Prev.IsEnabled = true;
             }
             Button_Next.IsEnabled = false;
-            Button_Edit.IsEnabled = true;
+            Button_Edit.IsEnabled = false;
             Button_Del.IsEnabled = true;
 
             enabledTextboxes();
@@ -60,15 +60,16 @@ namespace WPFapp
 
         private void Button_Prev_Click(object sender, RoutedEventArgs e)
         {
-            controller.PrevInstance();
-            Label_Count.Content = controller.InstanceCount.ToString();
-            Label_Index.Content = controller.InstanceIndex.ToString();
+            controller.PrevEmployee();
+            Label_Count.Content = controller.EmployeeCount.ToString();
+            Label_Index.Content = controller.EmployeeIndex.ToString();
             disabledTextboxes();
             updateTextbboxes();
 
             Button_Next.IsEnabled = true;
+            Button_Edit.IsEnabled = true;
 
-            if (controller.InstanceIndex == 0)
+            if (controller.EmployeeIndex == 0)
             {
                 Button_Prev.IsEnabled = false;
             }
@@ -76,15 +77,16 @@ namespace WPFapp
 
         private void Button_Next_Click(object sender, RoutedEventArgs e)
         {
-            controller.NextInstance();
-            Label_Count.Content = controller.InstanceCount.ToString();
-            Label_Index.Content = controller.InstanceIndex.ToString();
+            controller.NextEmployee();
+            Label_Count.Content = controller.EmployeeCount.ToString();
+            Label_Index.Content = controller.EmployeeIndex.ToString();
             disabledTextboxes();
             updateTextbboxes();
 
             Button_Prev.IsEnabled = true;
+            Button_Edit.IsEnabled = true;
 
-            if (controller.InstanceIndex == controller.InstanceCount - 1)
+            if (controller.EmployeeIndex == controller.EmployeeCount - 1)
             {
                 Button_Next.IsEnabled = false;
             }
@@ -92,16 +94,16 @@ namespace WPFapp
 
         private void Button_Del_Click(object sender, RoutedEventArgs e)
         {
-            controller.RemoveInstance();
-            Label_Count.Content = controller.InstanceCount.ToString();
-            Label_Index.Content = controller.InstanceIndex.ToString();
+            controller.RemoveEmployee();
+            Label_Count.Content = controller.EmployeeCount.ToString();
+            Label_Index.Content = controller.EmployeeIndex.ToString();
 
-            if (controller.InstanceCount == 1)
+            if (controller.EmployeeCount == 1)
             {
                 Button_Prev.IsEnabled = false;
                 Button_Next.IsEnabled = false;
             }
-            else if (controller.InstanceIndex >= 0)
+            else if (controller.EmployeeIndex >= 0)
             {
                 updateTextbboxes();
             }
@@ -120,42 +122,42 @@ namespace WPFapp
 
         private void TextBox_FirstName_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (controller.InstanceIndex >= 0)
+            if (controller.EmployeeIndex >= 0)
             {
-                controller.CurrentInstance.FirstName = TextBox_FirstName.Text;
+                controller.CurrentEmployee.FirstName = TextBox_FirstName.Text;
             }
         }
 
         private void TextBox_LastName_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (controller.InstanceIndex >= 0)
+            if (controller.EmployeeIndex >= 0)
             {
-                controller.CurrentInstance.LastName = TextBox_LastName.Text;
+                controller.CurrentEmployee.LastName = TextBox_LastName.Text;
             }
         }
         private void ComboBox_Role_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (controller.InstanceIndex >= 0)
+            if (controller.EmployeeIndex >= 0)
             {
                 if (ComboBox_Role.SelectedItem != null)
                 {
                     string selectedRole = ComboBox_Role.SelectedItem.ToString();
                     if (selectedRole == "System.Windows.Controls.ComboBoxItem: Svend") { selectedRole = "Svend"; }
                     else if (selectedRole == "System.Windows.Controls.ComboBoxItem: Mester") { selectedRole = "Mester"; }
-                    controller.CurrentInstance.Role = selectedRole;
+                    controller.CurrentEmployee.Role = selectedRole;
                 }
             }
 
         }
         private void TextBox_UNKNOWN_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (controller.InstanceIndex >= 0)
+            if (controller.EmployeeIndex >= 0)
             {
                 int a = 0;
                 bool b = int.TryParse(TextBox_UNKNOWN.Text, out a);
                 if (b == true)
                 {
-                    controller.CurrentInstance.Id = a;
+                    controller.CurrentEmployee.Id = a;
                 }
                 else if (TextBox_UNKNOWN.Text != "")
                 {
@@ -169,16 +171,16 @@ namespace WPFapp
 
         private void CheckBox_Status_Checked(object sender, RoutedEventArgs e)
         {
-            if (controller.InstanceIndex >= 0)
+            if (controller.EmployeeIndex >= 0)
             {
-                controller.CurrentInstance.Status = true;
+                controller.CurrentEmployee.Status = true;
             }
         }
         private void CheckBox_Status_Unchecked(object sender, RoutedEventArgs e)
         {
-            if (controller.InstanceIndex >= 0)
+            if (controller.EmployeeIndex >= 0)
             {
-                controller.CurrentInstance.Status = false;
+                controller.CurrentEmployee.Status = false;
             }
         }
 
@@ -186,9 +188,9 @@ namespace WPFapp
         
         private void DataPicker_Date_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (controller.InstanceIndex >= 0 && DatePicker_Date.SelectedDate != null)
+            if (controller.EmployeeIndex >= 0 && DatePicker_Date.SelectedDate != null)
             {
-                controller.CurrentInstance.Date = DatePicker_Date.SelectedDate.Value;
+                controller.CurrentEmployee.Date = DatePicker_Date.SelectedDate.Value;
             }
         }
 
@@ -215,13 +217,13 @@ namespace WPFapp
 
         private void updateTextbboxes()
         {
-            TextBox_FirstName.Text = controller.CurrentInstance.FirstName;
-            TextBox_LastName.Text = controller.CurrentInstance.LastName;
-            ComboBox_Role.Text = controller.CurrentInstance.Role;
-            TextBox_UNKNOWN.Text = controller.CurrentInstance.Id.ToString();
-            if (controller.CurrentInstance.Status == true) { CheckBox_Status.IsChecked = true; }
+            TextBox_FirstName.Text = controller.CurrentEmployee.FirstName;
+            TextBox_LastName.Text = controller.CurrentEmployee.LastName;
+            ComboBox_Role.Text = controller.CurrentEmployee.Role;
+            TextBox_UNKNOWN.Text = controller.CurrentEmployee.Id.ToString();
+            if (controller.CurrentEmployee.Status == true) { CheckBox_Status.IsChecked = true; }
             else { CheckBox_Status.IsChecked = false; }
-            DatePicker_Date.SelectedDate = controller.CurrentInstance.Date;
+            DatePicker_Date.SelectedDate = controller.CurrentEmployee.Date;
         }
 
         private void clearTextboxes()
