@@ -78,6 +78,21 @@ namespace WPFapp
                 CurrentEmployee = employeeRepo.GetEmployeeAtIndex(EmployeeIndex);
             }
         }
+        public void RemoveResource()
+        {
+            if (CurrentResource != null)
+            {
+                resourceRepo.RemoveResource(CurrentResource);
+
+                ResourceCount = resourceRepo.Count;
+                if (ResourceIndex == ResourceCount)
+                {
+                    ResourceIndex--;
+                }
+
+                CurrentResource = resourceRepo.GetResourceAtIndex(ResourceIndex);
+            }
+        }
 
         public void NextEmployee()
         {
@@ -85,6 +100,15 @@ namespace WPFapp
             {
                 EmployeeIndex++;
                 CurrentEmployee = employeeRepo.GetEmployeeAtIndex(EmployeeIndex);
+            }
+        }
+
+        public void NextResource()
+        {
+            if (ResourceIndex < ResourceCount - 1)
+            {
+                ResourceIndex++;
+                CurrentResource = resourceRepo.GetResourceAtIndex(ResourceIndex);
             }
         }
 

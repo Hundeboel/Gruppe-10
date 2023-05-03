@@ -83,18 +83,45 @@ namespace WPFapp
 
         private void Button_Next_Click(object sender, RoutedEventArgs e)
         {
-            controller.NextInstance();
+            controller.NextResource();
             Label_Count.Content = controller.InstanceCount.ToString();
             Label_Index.Content = controller.InstanceIndex.ToString();
             disabledInputField();
-            updateTextbboxes();
+            updateInputField();
 
             Button_Prev.IsEnabled = true;
+            Button_Edit.IsEnabled = true;
 
-            if (controller.InstanceIndex == controller.InstanceCount - 1)
+            if (controller.ResourceIndex == controller.ResourceCount - 1)
             {
                 Button_Next.IsEnabled = false;
             }
+        }
+
+        private void Button_Del_Click(object sender, RoutedEventArgs e)
+        {
+            controller.RemoveResource();
+            Label_Count.Content = controller.ResourceCount.ToString();
+            Label_Index.Content = controller.ResourceIndex.ToString();
+
+            if (controller.ResourceCount == 1)
+            {
+                Button_Prev.IsEnabled = false;
+                Button_Next.IsEnabled = false;
+            }
+            else if (controller.ResourceIndex >= 0)
+            {
+                updateInputField();
+            }
+            else
+            {
+                clearInputField();
+                Button_Del.IsEnabled = false;
+                Button_Prev.IsEnabled = false;
+                Button_Next.IsEnabled = false;
+                Button_Edit.IsEnabled = false;
+            }
+            disabledInputField();
         }
 
         private void Button_ShowResources_Click(object sender, RoutedEventArgs e)
@@ -105,55 +132,95 @@ namespace WPFapp
         }
         #endregion
 
+        #region Input fields
+
         private void TextBox_Name_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            if (controller.ResourceIndex >= 0)
+            {
+                controller.CurrentResource.Name = TextBox_Name.Text;
+            }
         }
 
         private void TextBox_Type_TextChanged(object sender, TextChangedEventArgs e)
         {
-
-        }
-
-        private void TextBox_Status_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            if (controller.ResourceIndex >= 0)
+            {
+                controller.CurrentResource.Type = TextBox_Type.Text;
+            }
         }
 
         private void TextBox_Amount_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            if (controller.ResourceIndex >= 0)
+            {
+                int a = 0;
+                bool b = int.TryParse(TextBox_Amount.Text, out a);
+                if (b == true)
+                {
+                    controller.CurrentResource.Amount = a;
+                }
+                else if (TextBox_Amount.Text != "")
+                {
+                    MessageBox.Show("ERROR: Numbers only");
+                    TextBox_Amount.Text = s;
+                    TextBox_Amount.CaretIndex = TextBox_Amount.Text.Length;
+                }
+                s = TextBox_Amount.Text;
+            }
         }
+
+        private void CheckBox_Rented_Checked(object sender, RoutedEventArgs e)
+        {
+            if (controller.ResourceIndex >= 0)
+            {
+                controller.CurrentResource.Rented = true;
+            }
+        }
+        private void CheckBox_Rented_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (controller.ResourceIndex >= 0)
+            {
+                controller.CurrentResource.Rented = false;
+            }
+        }
+
+        #endregion
+
         private void enabledInputField()
         {
             TextBox_Name.IsEnabled = true;
             TextBox_Type.IsEnabled = true;
-            TextBox_Status.IsEnabled = true;
+            TextBox_Rented.IsEnabled = true;
             TextBox_Amount.IsEnabled = true;
+            CheckBox_Rented.IsEnabled = true;
         }
 
         private void disabledInputField()
         {
             TextBox_Name.IsEnabled = false;
             TextBox_Type.IsEnabled = false;
-            TextBox_Status.IsEnabled = false;
+            TextBox_Rented.IsEnabled = false;
             TextBox_Amount.IsEnabled = false;
+            CheckBox_Rented.IsEnabled = false;
         }
 
         private void clearInputField()
         {
             TextBox_Name.Text = string.Empty;
             TextBox_Type.Text = string.Empty;
-            TextBox_Status.Text = string.Empty;
+            TextBox_Rented.Text = string.Empty;
             TextBox_Amount.Text = string.Empty;
+            CheckBox_Rented.IsChecked = false;
         }
 
         private void updateInputField()
         {
             TextBox_Name.Text = controller.CurrentResource.Name;
             TextBox_Type.Text = controller.CurrentResource.Type;
-            TextBox_Status.Text = controller.CurrentResource.Status;
+            TextBox_Rented.Text = controller.CurrentResource.Rented.ToString();
             TextBox_Amount.Text = controller.CurrentResource.Amount.ToString();
+            CheckBox_Rented.IsChecked = controller.CurrentResource.Rented;
         }
     }
 }
