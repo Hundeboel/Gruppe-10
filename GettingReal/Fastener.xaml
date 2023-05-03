@@ -27,7 +27,7 @@
         <Button x:Name="Button_Next" Content="Næste samlingsmateriale" HorizontalAlignment="Left" Margin="100,450,0,0" VerticalAlignment="Top" Width="170" Click="Button_Next_Click" IsEnabled="False"/>
 
         <Button x:Name="Button_MainPage" Content="Main Page" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Click="Button_MainPage_Click"/>
-        <Button x:Name="Button_Del" Content="Slet Profil" HorizontalAlignment="Left" Margin="100,496,0,0" VerticalAlignment="Top" Width="170" Click="Button_Next_Click" IsEnabled="False"/>
+        <Button x:Name="Button_Del" Content="Slet Profil" HorizontalAlignment="Left" Margin="100,496,0,0" VerticalAlignment="Top" Width="170" Click="Button_Del_Click" IsEnabled="False"/>
 
     </Grid>
 </Window>
