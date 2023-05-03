@@ -29,15 +29,22 @@ namespace WPFapp
         public int InstanceCount { get; private set; }
         public int InstanceIndex { get; private set; }
 
+        private FastenersRepo fastenerRepo;
+        public Fastener CurrentFastener { get; private set; }
+        public int FastenerCount { get; private set; }
+        public int FastenerIndex { get; private set; }
+
         public Controller()
         {
             CurrentEmployee = null;
             CurrentResource = null;
             CurrentProject = null;
+            CurrentFastener = null;
 
             employeeRepo = new EmployeeRepo();
             resourceRepo = new ResourceRepo();
             projectRepo = new ProjectRepo();
+            fastenerRepo = new FastenersRepo();
 
             EmployeeCount = 0;
             EmployeeIndex = -1;
@@ -45,6 +52,8 @@ namespace WPFapp
             ResourceIndex = -1;
             ProjectCount = 0; 
             ProjectIndex = -1;
+            FastenerCount = 0;
+            FastenerIndex = -1;
 
             //For GUI
             CurrentInstance = null;
@@ -79,6 +88,16 @@ namespace WPFapp
             ProjectCount = projectRepo.Count; 
             ProjectIndex = ProjectCount - 1;
         }
+
+        public void AddFastener()
+        {
+            Fastener fastener = new Fastener();
+            CurrentFastener = fastener;
+            fastenerRepo.AddFastener(fastener);
+            FastenerCount = fastenerRepo.Count;
+            FastenerIndex = FastenerCount - 1;
+        }
+
 
         public void RemoveEmployee()
         {
@@ -127,6 +146,22 @@ namespace WPFapp
             }
         }
 
+        public void RemoveFastener()
+        {
+            if (CurrentFastener != null)
+            {
+                fastenerRepo.RemoveFastener(CurrentFastener);
+
+                FastenerCount = fastenerRepo.Count;
+                if (FastenerIndex == FastenerCount)
+                {
+                    FastenerIndex--;
+                }
+
+                CurrentFastener = fastenerRepo.GetFastenerAtIndex(FastenerIndex);
+            }
+        }
+
         public void NextEmployee()
         {
             if (EmployeeIndex < EmployeeCount - 1)
@@ -154,6 +189,15 @@ namespace WPFapp
             }
         }
 
+        public void NextFastener()
+        {
+            if (FastenerIndex < FastenerCount - 1)
+            {
+                FastenerIndex++;
+                CurrentFastener = fastenerRepo.GetFastenerAtIndex(FastenerIndex);
+            }
+        }
+
         public void PrevEmployee()
         {
             if (EmployeeIndex > 0)
@@ -178,6 +222,14 @@ namespace WPFapp
                 ProjectIndex--;
                 CurrentProject = projectRepo.GetProjectAtIndex(ProjectIndex);
             } 
+        }
+        public void PrevFastener()
+        {
+            if (FastenerIndex > 0)
+            {
+                FastenerIndex--;
+                CurrentFastener = fastenerRepo.GetFastenerAtIndex(FastenerIndex);
+            }
         }
 
         //For GUI which is not yet added to the controller

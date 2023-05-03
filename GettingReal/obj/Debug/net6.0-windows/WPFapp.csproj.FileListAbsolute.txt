@@ -167,3 +167,7 @@ C:\Users\45281\Source\Repos\Gruppe-10\GettingReal\obj\Debug\net6.0-windows\refin
 C:\Users\45281\Source\Repos\Gruppe-10\GettingReal\obj\Debug\net6.0-windows\WPFapp.pdb
 C:\Users\45281\Source\Repos\Gruppe-10\GettingReal\obj\Debug\net6.0-windows\WPFapp.genruntimeconfig.cache
 C:\Users\45281\Source\Repos\Gruppe-10\GettingReal\obj\Debug\net6.0-windows\ref\WPFapp.dll
+C:\Users\Hicmu\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\ActiveProjects.g.cs
+C:\Users\Hicmu\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\AllResources.g.cs
+C:\Users\Hicmu\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\ActiveProjects.baml
+C:\Users\Hicmu\source\repos\gettingreal\GettingReal\obj\Debug\net6.0-windows\AllResources.baml

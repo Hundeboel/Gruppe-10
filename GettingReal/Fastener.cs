@@ -21,7 +21,6 @@ namespace WPFapp
             Type = type;
             Description = description;
             Amount = amount;
-            Console.WriteLine("Hello!");
         }
     }
 }

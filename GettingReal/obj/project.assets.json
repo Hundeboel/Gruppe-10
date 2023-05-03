@@ -8,24 +8,19 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\danie\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Hicmu\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\danie\\source\\repos\\gettingreal\\GettingReal\\WPFapp.csproj",
+      "projectUniqueName": "C:\\Users\\Hicmu\\source\\repos\\gettingreal\\GettingReal\\WPFapp.csproj",
       "projectName": "WPFapp",
-      "projectPath": "C:\\Users\\danie\\source\\repos\\gettingreal\\GettingReal\\WPFapp.csproj",
-      "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\danie\\source\\repos\\gettingreal\\GettingReal\\obj\\",
+      "projectPath": "C:\\Users\\Hicmu\\source\\repos\\gettingreal\\GettingReal\\WPFapp.csproj",
+      "packagesPath": "C:\\Users\\Hicmu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hicmu\\source\\repos\\gettingreal\\GettingReal\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Hicmu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
