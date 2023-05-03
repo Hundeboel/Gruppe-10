@@ -66,8 +66,8 @@ namespace WPFapp
         private void Button_Prev_Click(object sender, RoutedEventArgs e)
         {
             controller.PrevResource();
-            Label_Count.Content = controller.InstanceCount.ToString();
-            Label_Index.Content = controller.InstanceIndex.ToString();
+            Label_Count.Content = controller.ResourceCount.ToString();
+            Label_Index.Content = controller.ResourceIndex.ToString();
             disabledInputField();
             updateInputField();
 
@@ -75,7 +75,7 @@ namespace WPFapp
 
             Button_Edit.IsEnabled = true;
 
-            if (controller.InstanceIndex == 0)
+            if (controller.ResourceIndex == 0)
             {
                 Button_Prev.IsEnabled = false;
             }
@@ -84,8 +84,8 @@ namespace WPFapp
         private void Button_Next_Click(object sender, RoutedEventArgs e)
         {
             controller.NextResource();
-            Label_Count.Content = controller.InstanceCount.ToString();
-            Label_Index.Content = controller.InstanceIndex.ToString();
+            Label_Count.Content = controller.ResourceCount.ToString();
+            Label_Index.Content = controller.ResourceIndex.ToString();
             disabledInputField();
             updateInputField();
 

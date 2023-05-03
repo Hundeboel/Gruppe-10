@@ -25,7 +25,8 @@
         <Button x:Name="Button_Edit" Content="Redigér" HorizontalAlignment="Left" Margin="100,350,0,0" VerticalAlignment="Top" Width="100" Click="Button_Edit_Click" IsEnabled="False"/>
         <Button x:Name="Button_Prev" Content="Tidligere projekt" HorizontalAlignment="Left" Margin="100,400,0,0" VerticalAlignment="Top" Width="100" Click="Button_Prev_Click" IsEnabled="False"/>
         <Button x:Name="Button_Next" Content="Næste projekt" HorizontalAlignment="Left" Margin="100,450,0,0" VerticalAlignment="Top" Width="100" Click="Button_Next_Click" IsEnabled="False"/>
-
+        <Button x:Name="Button_Del" Content="Slet Projekt" HorizontalAlignment="Left" Margin="100,500,0,0" VerticalAlignment="Top" Width="100" Click="Button_Del_Click" IsEnabled="False"/>
+        
         <Button x:Name="Button_MainPage" Content="Main Page" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Click="Button_MainPage_Click"/>
     </Grid>
 </Window>

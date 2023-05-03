@@ -20,11 +20,14 @@ namespace WPFapp
     public partial class Project : Window
     {
         private Controller controller;
+        string s = "";
         public Project()
         {
             InitializeComponent();
             controller = new Controller();
         }
+
+        #region Buttons
 
         private void Button_MainPage_Click(object sender, RoutedEventArgs e)
         {
@@ -35,36 +38,42 @@ namespace WPFapp
 
         private void Button_NewProject_Click(object sender, RoutedEventArgs e)
         {
-            controller.AddInstance();
-            Label_Count.Content = controller.InstanceCount.ToString();
-            Label_Index.Content = controller.InstanceIndex.ToString();
+            controller.AddProject();
+            Label_Count.Content = controller.ProjectCount.ToString();
+            Label_Index.Content = controller.ProjectIndex.ToString();
 
-            if (controller.InstanceIndex > 0)
+            if (controller.ProjectIndex > 0)
             {
                 Button_Prev.IsEnabled = true;
             }
             Button_Next.IsEnabled = false;
 
-            enabledTextboxes();
-            clearTextboxes();
+            Button_Edit.IsEnabled = false;
+
+            Button_Del.IsEnabled = true;
+
+            enabledInputField();
+            clearInputField();
         }
 
         private void Button_Edit_Click(object sender, RoutedEventArgs e)
         {
-
+            enabledInputField();
         }
 
         private void Button_Prev_Click(object sender, RoutedEventArgs e)
         {
-            controller.PrevInstance();
-            Label_Count.Content = controller.InstanceCount.ToString();
-            Label_Index.Content = controller.InstanceIndex.ToString();
-            disabledTextboxes();
-            updateTextbboxes();
+            controller.PrevProject();
+            Label_Count.Content = controller.ProjectCount.ToString();
+            Label_Index.Content = controller.ProjectIndex.ToString();
+            disabledInputField();
+            updateInputField();
 
             Button_Next.IsEnabled = true;
 
-            if (controller.InstanceIndex == 0)
+            Button_Edit.IsEnabled = true;
+
+            if (controller.ProjectIndex == 0)
             {
                 Button_Prev.IsEnabled = false;
             }
@@ -75,8 +84,8 @@ namespace WPFapp
             controller.NextInstance();
             Label_Count.Content = controller.InstanceCount.ToString();
             Label_Index.Content = controller.InstanceIndex.ToString();
-            disabledTextboxes();
-            updateTextbboxes();
+            disabledInputField();
+            updateInputField();
 
             Button_Prev.IsEnabled = true;
 
@@ -85,6 +94,13 @@ namespace WPFapp
                 Button_Next.IsEnabled = false;
             }
         }
+
+        private void Button_Del_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        #endregion
 
         private void TextBox_Name_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -106,7 +122,7 @@ namespace WPFapp
 
         }
 
-        private void enabledTextboxes()
+        private void enabledInputField()
         {
             TextBox_Name.IsEnabled = true;
             TextBox_Status.IsEnabled = true;
@@ -114,7 +130,7 @@ namespace WPFapp
             TextBox_EndDate.IsEnabled = true;
         }
 
-        private void disabledTextboxes()
+        private void disabledInputField()
         {
             TextBox_Name.IsEnabled = false;
             TextBox_Status.IsEnabled = false;
@@ -122,7 +138,7 @@ namespace WPFapp
             TextBox_EndDate.IsEnabled = false;
         }
 
-        private void updateTextbboxes()
+        private void updateInputField()
         {
             TextBox_Name.Text = controller.CurrentInstance.FirstName;
             TextBox_Status.Text = controller.CurrentInstance.LastName;
@@ -130,14 +146,13 @@ namespace WPFapp
             TextBox_EndDate.Text = controller.CurrentInstance.Id.ToString();
         }
 
-        private void clearTextboxes()
+        private void clearInputField()
         {
             TextBox_Name.Text = string.Empty;
             TextBox_Status.Text = string.Empty;
             TextBox_StartDate.Text = string.Empty;
             TextBox_EndDate.Text = string.Empty;
         }
-
 
     }
 }

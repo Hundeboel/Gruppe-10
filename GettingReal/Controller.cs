@@ -15,29 +15,36 @@ namespace WPFapp
         public int EmployeeCount { get; private set; }
         public int EmployeeIndex { get; private set; }
 
-        //Ikke koblet til methods endnu
         private ResourceRepo resourceRepo;
         public Resource CurrentResource { get; private set; }
         public int ResourceCount { get; private set; }
         public int ResourceIndex { get; private set; }
 
+        private ProjectRepo projectRepo;
+        public Project CurrentProject { get; private set; }
+        public int ProjectCount { get; private set; }
+        public int ProjectIndex { get; private set; }
+
         public Employee CurrentInstance { get; private set; }
         public int InstanceCount { get; private set; }
         public int InstanceIndex { get; private set; }
-
 
         public Controller()
         {
             CurrentEmployee = null;
             CurrentResource = null;
+            CurrentProject = null;
 
             employeeRepo = new EmployeeRepo();
             resourceRepo = new ResourceRepo();
+            projectRepo = new ProjectRepo();
 
             EmployeeCount = 0;
             EmployeeIndex = -1;
             ResourceCount = 0;
             ResourceIndex = -1;
+            ProjectCount = 0; 
+            ProjectIndex = -1;
 
             //For GUI
             CurrentInstance = null;
@@ -63,6 +70,16 @@ namespace WPFapp
             ResourceIndex = ResourceCount - 1;
 
         }
+
+        public void AddProject() 
+        { 
+            Project project = new Project();
+            CurrentProject = project;
+            projectRepo.AddProject(project);
+            ProjectCount = projectRepo.Count; 
+            ProjectIndex = ProjectCount - 1;
+        }
+
         public void RemoveEmployee()
         {
             if (CurrentEmployee != null)
@@ -127,6 +144,15 @@ namespace WPFapp
                 ResourceIndex--;
                 CurrentResource = resourceRepo.GetResourceAtIndex(ResourceIndex);
             }
+        }
+
+        public void PrevProject()
+        { 
+            if (ProjectIndex > 0) 
+            {
+                ProjectIndex--;
+                CurrentProject = projectRepo.GetProjectAtIndex(ProjectIndex);
+            } 
         }
 
         //For GUI which is not yet added to the controller
