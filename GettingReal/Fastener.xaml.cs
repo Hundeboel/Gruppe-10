@@ -155,7 +155,7 @@ namespace WPFapp
                 bool b = int.TryParse(TextBox_Amount.Text, out a);
                 if (b == true)
                 {
-                    controller.CurrentFastener.Id = a;
+                    controller.CurrentFastener.Amount = a;
                 }
                 else if (TextBox_Amount.Text != "")
                 {
