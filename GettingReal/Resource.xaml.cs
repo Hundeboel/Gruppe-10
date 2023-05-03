@@ -20,11 +20,15 @@ namespace WPFapp
     public partial class Resource : Window
     {
         private Controller controller;
+        string s = "";
         public Resource()
         {
             InitializeComponent();
             controller = new Controller();
         }
+
+
+        #region Buttons
 
         private void Button_MainPage_Click(object sender, RoutedEventArgs e)
         {
@@ -35,34 +39,41 @@ namespace WPFapp
 
         private void Button_NewResource_Click(object sender, RoutedEventArgs e)
         {
-            controller.AddInstance();
-            Label_Count.Content = controller.InstanceCount.ToString();
-            Label_Index.Content = controller.InstanceIndex.ToString();
+            controller.AddResource();
 
-            if (controller.InstanceIndex > 0)
+            Label_Count.Content = controller.ResourceCount.ToString();
+            Label_Index.Content = controller.ResourceIndex.ToString();
+
+            if (controller.ResourceIndex > 0)
             {
                 Button_Prev.IsEnabled = true;
             }
             Button_Next.IsEnabled = false;
 
-            enabledTextboxes();
-            clearTextboxes();
+            Button_Edit.IsEnabled = false;
+
+            Button_Del.IsEnabled = true;
+
+            enabledInputField();
+            clearInputField();
         }
 
         private void Button_Edit_Click(object sender, RoutedEventArgs e)
         {
-
+            enabledInputField();
         }
 
         private void Button_Prev_Click(object sender, RoutedEventArgs e)
         {
-            controller.PrevInstance();
+            controller.PrevResource();
             Label_Count.Content = controller.InstanceCount.ToString();
             Label_Index.Content = controller.InstanceIndex.ToString();
-            disabledTextboxes();
-            updateTextbboxes();
+            disabledInputField();
+            updateInputField();
 
             Button_Next.IsEnabled = true;
+
+            Button_Edit.IsEnabled = true;
 
             if (controller.InstanceIndex == 0)
             {
@@ -75,7 +86,7 @@ namespace WPFapp
             controller.NextInstance();
             Label_Count.Content = controller.InstanceCount.ToString();
             Label_Index.Content = controller.InstanceIndex.ToString();
-            disabledTextboxes();
+            disabledInputField();
             updateTextbboxes();
 
             Button_Prev.IsEnabled = true;
@@ -92,6 +103,7 @@ namespace WPFapp
             newWindow.Show();
             this.Close();
         }
+        #endregion
 
         private void TextBox_Name_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -112,7 +124,7 @@ namespace WPFapp
         {
 
         }
-        private void enabledTextboxes()
+        private void enabledInputField()
         {
             TextBox_Name.IsEnabled = true;
             TextBox_Type.IsEnabled = true;
@@ -120,7 +132,7 @@ namespace WPFapp
             TextBox_Amount.IsEnabled = true;
         }
 
-        private void disabledTextboxes()
+        private void disabledInputField()
         {
             TextBox_Name.IsEnabled = false;
             TextBox_Type.IsEnabled = false;
@@ -128,20 +140,20 @@ namespace WPFapp
             TextBox_Amount.IsEnabled = false;
         }
 
-        private void updateTextbboxes()
-        {
-            TextBox_Name.Text = controller.CurrentInstance.FirstName;
-            TextBox_Type.Text = controller.CurrentInstance.LastName;
-            TextBox_Status.Text = controller.CurrentInstance.Role;
-            TextBox_Amount.Text = controller.CurrentInstance.Id.ToString();
-        }
-
-        private void clearTextboxes()
+        private void clearInputField()
         {
             TextBox_Name.Text = string.Empty;
             TextBox_Type.Text = string.Empty;
             TextBox_Status.Text = string.Empty;
             TextBox_Amount.Text = string.Empty;
+        }
+
+        private void updateInputField()
+        {
+            TextBox_Name.Text = controller.CurrentResource.Name;
+            TextBox_Type.Text = controller.CurrentResource.Type;
+            TextBox_Status.Text = controller.CurrentResource.Status;
+            TextBox_Amount.Text = controller.CurrentResource.Amount.ToString();
         }
     }
 }

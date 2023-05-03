@@ -54,7 +54,15 @@ namespace WPFapp
             EmployeeIndex = EmployeeCount - 1;
 
         }
+        public void AddResource()
+        {
+            Resource resource = new Resource();
+            CurrentResource = resource;
+            resourceRepo.AddResource(resource);
+            ResourceCount = resourceRepo.Count;
+            ResourceIndex = ResourceCount - 1;
 
+        }
         public void RemoveEmployee()
         {
             if (CurrentEmployee != null)
@@ -88,7 +96,14 @@ namespace WPFapp
                 CurrentEmployee = employeeRepo.GetEmployeeAtIndex(EmployeeIndex);
             }
         }
-
+        public void PrevResource()
+        {
+            if (ResourceIndex > 0)
+            {
+                ResourceIndex--;
+                CurrentResource = resourceRepo.GetResourceAtIndex(ResourceIndex);
+            }
+        }
 
         //For GUI which is not yet added to the controller
         #region 

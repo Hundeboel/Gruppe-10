@@ -25,7 +25,7 @@ namespace WPFapp
             resources.Add(resource);
         }
 
-        public Resource GetResourceByType(int index)
+        public Resource GetResourceAtIndex(int index)
         {
             Resource resourceResult = null;
             if (index >= 0 && index < resources.Count)
