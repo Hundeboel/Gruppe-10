@@ -189,7 +189,7 @@ namespace WPFapp
             TextBox_Name.Text = controller.CurrentFastener.Name;
             TextBox_Type.Text = controller.CurrentFastener.Type;
             TextBox_Spes.Text = controller.CurrentFastener.Description;
-            TextBox_Amount.Text = controller.CurrentFastener.Id.ToString();
+            TextBox_Amount.Text = controller.CurrentFastener.Amount.ToString();
         }
 
         private void clearTextboxes()
