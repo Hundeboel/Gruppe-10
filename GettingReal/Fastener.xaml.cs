@@ -19,6 +19,7 @@ namespace WPFapp
     /// </summary>
     public partial class Fastener : Window
     {
+        string s = "";
         private Controller controller;
         public Fastener()
         {
@@ -35,11 +36,11 @@ namespace WPFapp
 
         private void Button_NewFastener_Click(object sender, RoutedEventArgs e)
         {
-            controller.AddInstance();
-            Label_Count.Content = controller.InstanceCount.ToString();
-            Label_Index.Content = controller.InstanceIndex.ToString();
+            controller.AddFastener();
+            Label_Count.Content = controller.FastenerCount.ToString();
+            Label_Index.Content = controller.FastenerIndex.ToString();
 
-            if (controller.InstanceIndex > 0)
+            if (controller.FastenerIndex > 0)
             {
                 Button_Prev.IsEnabled = true;
             }
@@ -51,20 +52,20 @@ namespace WPFapp
 
         private void Button_Edit_Click(object sender, RoutedEventArgs e)
         {
-
+            enabledTextboxes();
         }
 
         private void Button_Prev_Click(object sender, RoutedEventArgs e)
         {
-            controller.PrevInstance();
-            Label_Count.Content = controller.InstanceCount.ToString();
-            Label_Index.Content = controller.InstanceIndex.ToString();
+            controller.PrevFastener();
+            Label_Count.Content = controller.FastenerCount.ToString();
+            Label_Index.Content = controller.FastenerIndex.ToString();
             disabledTextboxes();
-            updateTextbboxes();
+            updateTextboxes();
 
             Button_Next.IsEnabled = true;
 
-            if (controller.InstanceIndex == 0)
+            if (controller.FastenerIndex == 0)
             {
                 Button_Prev.IsEnabled = false;
             }
@@ -72,38 +73,98 @@ namespace WPFapp
 
         private void Button_Next_Click(object sender, RoutedEventArgs e)
         {
-            controller.NextInstance();
-            Label_Count.Content = controller.InstanceCount.ToString();
-            Label_Index.Content = controller.InstanceIndex.ToString();
+            
+            controller.NextFastener();
+            Label_Count.Content = controller.FastenerCount.ToString();
+            Label_Index.Content = controller.FastenerIndex.ToString();
             disabledTextboxes();
-            updateTextbboxes();
+            updateTextboxes();
 
             Button_Prev.IsEnabled = true;
 
-            if (controller.InstanceIndex == controller.InstanceCount - 1)
+            if (controller.FastenerIndex == controller.FastenerCount - 1)
             {
                 Button_Next.IsEnabled = false;
             }
         }
+        private void Button_Del_Click(object sender, RoutedEventArgs e)
+        {
+            //Call method Remove____ from controller
+            controller.RemoveFastener();
+            Label_Count.Content = controller.FastenerCount.ToString();
+            Label_Index.Content = controller.FastenerIndex.ToString();
+
+            //If; only 1 instance exist - disable prev and next buttons
+            if (controller.FastenerCount == 1)
+            {
+                Button_Prev.IsEnabled = false;
+                Button_Next.IsEnabled = false;
+            }
+            //If; 1 or more instance exist update the input fields to reflect current instance
+            else if (controller.EmployeeIndex >= 0)
+            {
+                updateTextboxes();
+            }
+            //If; no instances exist - disable all but new instance button and clear input fields 
+            else
+            {
+                clearTextboxes();
+                Button_Del.IsEnabled = false;
+                Button_Prev.IsEnabled = false;
+                Button_Next.IsEnabled = false;
+                Button_Edit.IsEnabled = false;
+            }
+
+            //Disable editing
+            disabledTextboxes();
+
+        }
 
         private void TextBox_Name_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            if (controller.FastenerIndex >= 0)
+            {
+                controller.CurrentFastener.Name = TextBox_Name.Text;
+            }
         }
 
         private void TextBox_Type_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            if (controller.FastenerIndex >= 0)
+            {
+                controller.CurrentFastener.Type = TextBox_Type.Text;
+            }
         }
 
         private void TextBox_Spes_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            if (controller.FastenerIndex >= 0)
+            {
+                controller.CurrentFastener.Description = TextBox_Spes.Text;
+            }
         }
 
         private void TextBox_Amount_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            if (controller.FastenerIndex >= 0)
+            {
+                //Copypaste it and change TextBox_UNKNOWN to name of current TextBox + Current____.---- to current class and variable name
+                //Id = int
+                //For futher explaination ask Laura
+                int a = 0;
+                bool b = int.TryParse(TextBox_Amount.Text, out a);
+                if (b == true)
+                {
+                    controller.CurrentFastener.Id = a;
+                }
+                else if (TextBox_Amount.Text != "")
+                {
+                    MessageBox.Show("ERROR: Numbers only");
+                    TextBox_Amount.Text = s;
+                    TextBox_Amount.CaretIndex = TextBox_Amount.Text.Length;
+                }
+                s = TextBox_Amount.Text;
+            }
         }
         private void enabledTextboxes()
         {
@@ -121,12 +182,12 @@ namespace WPFapp
             TextBox_Amount.IsEnabled = false;
         }
 
-        private void updateTextbboxes()
+        private void updateTextboxes()
         {
-            TextBox_Name.Text = controller.CurrentInstance.FirstName;
-            TextBox_Type.Text = controller.CurrentInstance.LastName;
-            TextBox_Spes.Text = controller.CurrentInstance.Role;
-            TextBox_Amount.Text = controller.CurrentInstance.Id.ToString();
+            TextBox_Name.Text = controller.CurrentFastener.Name;
+            TextBox_Type.Text = controller.CurrentFastener.Type;
+            TextBox_Spes.Text = controller.CurrentFastener.Description;
+            TextBox_Amount.Text = controller.CurrentFastener.Id.ToString();
         }
 
         private void clearTextboxes()
