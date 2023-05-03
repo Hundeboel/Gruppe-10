@@ -121,6 +121,12 @@ namespace WPFapp
             }
             disabledInputField();
         }
+        private void Button_Show_Projects(object sender, RoutedEventArgs e)
+        {
+            var newWindow = new AllProjects();
+            newWindow.Show();
+            this.Close();
+        }
 
         #endregion
 
