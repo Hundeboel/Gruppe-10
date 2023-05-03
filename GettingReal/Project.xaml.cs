@@ -123,64 +123,99 @@ namespace WPFapp
         }
         private void Button_Show_Projects(object sender, RoutedEventArgs e)
         {
-            var newWindow = new AllProjects();
+            var newWindow = new ActiveProjects();
             newWindow.Show();
             this.Close();
         }
 
         #endregion
 
+        #region Input Fields
+
         private void TextBox_Name_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            if (controller.ProjectIndex >= 0)
+            {
+                controller.CurrentProject.Name = TextBox_Name.Text;
+            }
         }
 
-        private void TextBox_Status_TextChanged(object sender, TextChangedEventArgs e)
+        private void CheckBox_Finished_Checked(object sender, RoutedEventArgs e)
+        {
+            if (controller.ProjectIndex >= 0)
+            {
+                controller.CurrentProject.Finished = true;
+            }
+        }
+        private void CheckBox_Finished_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (controller.ProjectIndex >= 0)
+            {
+                controller.CurrentProject.Finished = false;
+            }
+        }
+
+        private void DatePicker_StartDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+            if (controller.ProjectIndex >= 0 && DatePicker_StartDate.SelectedDate != null)
+            {
+               
+                controller.CurrentProject.StartDate = DatePicker_StartDate.SelectedDate.Value;
+            }
+        }
+
+        private void DatePicker_EndDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
 
+            if (controller.ProjectIndex >= 0 && DatePicker_EndDate.SelectedDate != null)
+            {
+
+                controller.CurrentProject.EndDate = DatePicker_EndDate.SelectedDate.Value;
+            }
         }
 
-        private void TextBox_StartDate_TextChanged(object sender, TextChangedEventArgs e)
-        {
+        #endregion
 
-        }
-
-        private void TextBox_EndDate_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
+        #region Methods
         private void enabledInputField()
         {
             TextBox_Name.IsEnabled = true;
-            TextBox_Status.IsEnabled = true;
-            TextBox_StartDate.IsEnabled = true;
-            TextBox_EndDate.IsEnabled = true;
+            DatePicker_StartDate.IsEnabled = true;
+            DatePicker_EndDate.IsEnabled = true;
+            CheckBox_Finished.IsEnabled = true;
+            
         }
 
         private void disabledInputField()
         {
             TextBox_Name.IsEnabled = false;
-            TextBox_Status.IsEnabled = false;
-            TextBox_StartDate.IsEnabled = false;
-            TextBox_EndDate.IsEnabled = false;
+            DatePicker_StartDate.IsEnabled = false;
+            DatePicker_EndDate.IsEnabled = false;
+            CheckBox_Finished.IsEnabled = false;
+
         }
 
         private void updateInputField()
         {
-            TextBox_Name.Text = controller.CurrentInstance.FirstName;
-            TextBox_Status.Text = controller.CurrentInstance.LastName;
-            TextBox_StartDate.Text = controller.CurrentInstance.Role;
-            TextBox_EndDate.Text = controller.CurrentInstance.Id.ToString();
+            TextBox_Name.Text = controller.CurrentProject.Name;
+            TextBox_Finished.Text = controller.CurrentProject.Finished.ToString();
+            DatePicker_StartDate.SelectedDate = controller.CurrentProject.StartDate;
+            DatePicker_EndDate.SelectedDate = controller.CurrentProject.EndDate;
+            CheckBox_Finished.IsChecked = controller.CurrentProject.Finished;
         }
 
         private void clearInputField()
         {
             TextBox_Name.Text = string.Empty;
-            TextBox_Status.Text = string.Empty;
-            TextBox_StartDate.Text = string.Empty;
-            TextBox_EndDate.Text = string.Empty;
+            TextBox_Finished.Text = string.Empty;
+            DatePicker_StartDate.SelectedDate = null;
+            DatePicker_EndDate.SelectedDate = null;
+            CheckBox_Finished.IsChecked = false;
+
         }
+        
+        #endregion
 
     }
 }

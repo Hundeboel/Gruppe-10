@@ -12,21 +12,23 @@
         <Label x:Name="Label_Count" Content="Count" HorizontalAlignment="Left" Margin="200,50,0,0" VerticalAlignment="Top"/>
 
         <Label x:Name="Label_Name" Content="Navn" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Label_Status" Content="Status" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Finished" Content="Finished" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Label_StartDate" Content="Startdato" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Label_EndDate" Content="Slutdato" HorizontalAlignment="Left" Margin="100,250,0,0" VerticalAlignment="Top"/>
 
         <TextBox x:Name="TextBox_Name" HorizontalAlignment="Left" Margin="200,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Name_TextChanged" IsEnabled="False"/>
-        <TextBox x:Name="TextBox_Status" HorizontalAlignment="Left" Margin="200,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Status_TextChanged" IsEnabled="False"/>
-        <TextBox x:Name="TextBox_StartDate" HorizontalAlignment="Left" Margin="200,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_StartDate_TextChanged" IsEnabled="False"/>
-        <TextBox x:Name="TextBox_EndDate" HorizontalAlignment="Left" Margin="200,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_EndDate_TextChanged" IsEnabled="False"/>
-
+        <TextBox x:Name="TextBox_Finished" HorizontalAlignment="Left" Margin="200,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <DatePicker x:Name="DatePicker_StartDate" HorizontalAlignment="Left" Margin="200,200,0,0" VerticalAlignment="Top" Width="120" IsEnabled="False" SelectedDateChanged="DatePicker_StartDate_SelectedDateChanged" FirstDayOfWeek="Monday"/>
+        <DatePicker x:Name="DatePicker_EndDate" HorizontalAlignment="Left" Margin="200,250,0,0" VerticalAlignment="Top" Width="120" IsEnabled="False" SelectedDateChanged="DatePicker_EndDate_SelectedDateChanged" FirstDayOfWeek="Monday"/>
+        
         <Button x:Name="Button_NewProject" Content="Nyt projekt" HorizontalAlignment="Left" Margin="100,300,0,0" VerticalAlignment="Top" Width="100" Click="Button_NewProject_Click"/>
         <Button x:Name="Button_Edit" Content="Redigér" HorizontalAlignment="Left" Margin="100,350,0,0" VerticalAlignment="Top" Width="100" Click="Button_Edit_Click" IsEnabled="False"/>
         <Button x:Name="Button_Prev" Content="Tidligere projekt" HorizontalAlignment="Left" Margin="100,400,0,0" VerticalAlignment="Top" Width="100" Click="Button_Prev_Click" IsEnabled="False"/>
         <Button x:Name="Button_Next" Content="Næste projekt" HorizontalAlignment="Left" Margin="100,450,0,0" VerticalAlignment="Top" Width="100" Click="Button_Next_Click" IsEnabled="False"/>
         <Button x:Name="Button_Del" Content="Slet Projekt" HorizontalAlignment="Left" Margin="100,500,0,0" VerticalAlignment="Top" Width="100" Click="Button_Del_Click" IsEnabled="False"/>
-        <Button x:Name="Button_Show" Content="Vis Projekter" HorizontalAlignment="Left" Margin="100,550,0,0" VerticalAlignment="Top" Width="100" Click="Button_Show_Projects" IsEnabled="False"/>
+        <Button x:Name="Button_Show" Content="Vis Projekter" HorizontalAlignment="Left" Margin="100,550,0,0" VerticalAlignment="Top" Width="100" Click="Button_Show_Projects"/>
+
+        <CheckBox x:Name="CheckBox_Finished" HorizontalAlignment="Left" Margin="325,150,0,0" VerticalAlignment="Top" IsEnabled="False" Checked="CheckBox_Finished_Checked" Unchecked="CheckBox_Finished_Unchecked"/>
         
         <Button x:Name="Button_MainPage" Content="Main Page" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Click="Button_MainPage_Click"/>
     </Grid>

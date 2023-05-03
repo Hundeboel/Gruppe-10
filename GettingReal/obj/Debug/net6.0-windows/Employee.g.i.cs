@@ -221,7 +221,7 @@ namespace WPFapp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WPFapp;V1.0.0.0;component/employee.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WPFapp;component/employee.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Employee.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
