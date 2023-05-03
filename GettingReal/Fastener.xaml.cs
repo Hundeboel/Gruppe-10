@@ -101,7 +101,7 @@ namespace WPFapp
                 Button_Next.IsEnabled = false;
             }
             //If; 1 or more instance exist update the input fields to reflect current instance
-            else if (controller.EmployeeIndex >= 0)
+            else if (controller.FastenerIndex >= 0)
             {
                 updateTextboxes();
             }
@@ -172,6 +172,8 @@ namespace WPFapp
             TextBox_Type.IsEnabled = true;
             TextBox_Spes.IsEnabled = true;
             TextBox_Amount.IsEnabled = true;
+            Button_Del.IsEnabled= true;
+            Button_Edit.IsEnabled = true;
         }
 
         private void disabledTextboxes()
