@@ -46,13 +46,17 @@ namespace WPFapp
             }
             Button_Next.IsEnabled = false;
 
-            enabledTextboxes();
-            clearTextboxes();
+            Button_Edit.IsEnabled = false;
+
+            Button_Del.IsEnabled = true;
+
+            enabledInputField();
+            clearInputField();
         }
 
         private void Button_Edit_Click(object sender, RoutedEventArgs e)
         {
-            enabledTextboxes();
+            enabledInputField();
         }
 
         private void Button_Prev_Click(object sender, RoutedEventArgs e)
@@ -60,10 +64,12 @@ namespace WPFapp
             controller.PrevFastener();
             Label_Count.Content = controller.FastenerCount.ToString();
             Label_Index.Content = controller.FastenerIndex.ToString();
-            disabledTextboxes();
-            updateTextboxes();
+            disabledInputField();
+            updateInputField();
 
             Button_Next.IsEnabled = true;
+
+            Button_Edit.IsEnabled = true;
 
             if (controller.FastenerIndex == 0)
             {
@@ -77,10 +83,11 @@ namespace WPFapp
             controller.NextFastener();
             Label_Count.Content = controller.FastenerCount.ToString();
             Label_Index.Content = controller.FastenerIndex.ToString();
-            disabledTextboxes();
-            updateTextboxes();
+            disabledInputField();
+            updateInputField();
 
             Button_Prev.IsEnabled = true;
+            Button_Edit.IsEnabled = true;
 
             if (controller.FastenerIndex == controller.FastenerCount - 1)
             {
@@ -103,12 +110,12 @@ namespace WPFapp
             //If; 1 or more instance exist update the input fields to reflect current instance
             else if (controller.FastenerIndex >= 0)
             {
-                updateTextboxes();
+                updateInputField();
             }
             //If; no instances exist - disable all but new instance button and clear input fields 
             else
             {
-                clearTextboxes();
+                clearInputField();
                 Button_Del.IsEnabled = false;
                 Button_Prev.IsEnabled = false;
                 Button_Next.IsEnabled = false;
@@ -116,7 +123,7 @@ namespace WPFapp
             }
 
             //Disable editing
-            disabledTextboxes();
+            disabledInputField();
 
         }
 
@@ -136,11 +143,11 @@ namespace WPFapp
             }
         }
 
-        private void TextBox_Spes_TextChanged(object sender, TextChangedEventArgs e)
+        private void TextBox_Specs_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (controller.FastenerIndex >= 0)
             {
-                controller.CurrentFastener.Description = TextBox_Spes.Text;
+                controller.CurrentFastener.Description = TextBox_Specs.Text;
             }
         }
 
@@ -166,37 +173,37 @@ namespace WPFapp
                 s = TextBox_Amount.Text;
             }
         }
-        private void enabledTextboxes()
+        private void enabledInputField()
         {
             TextBox_Name.IsEnabled = true;
             TextBox_Type.IsEnabled = true;
-            TextBox_Spes.IsEnabled = true;
+            TextBox_Specs.IsEnabled = true;
             TextBox_Amount.IsEnabled = true;
             Button_Del.IsEnabled= true;
             Button_Edit.IsEnabled = true;
         }
 
-        private void disabledTextboxes()
+        private void disabledInputField()
         {
             TextBox_Name.IsEnabled = false;
             TextBox_Type.IsEnabled = false;
-            TextBox_Spes.IsEnabled = false;
+            TextBox_Specs.IsEnabled = false;
             TextBox_Amount.IsEnabled = false;
         }
 
-        private void updateTextboxes()
+        private void updateInputField()
         {
             TextBox_Name.Text = controller.CurrentFastener.Name;
             TextBox_Type.Text = controller.CurrentFastener.Type;
-            TextBox_Spes.Text = controller.CurrentFastener.Description;
+            TextBox_Specs.Text = controller.CurrentFastener.Description;
             TextBox_Amount.Text = controller.CurrentFastener.Amount.ToString();
         }
 
-        private void clearTextboxes()
+        private void clearInputField()
         {
             TextBox_Name.Text = string.Empty;
             TextBox_Type.Text = string.Empty;
-            TextBox_Spes.Text = string.Empty;
+            TextBox_Specs.Text = string.Empty;
             TextBox_Amount.Text = string.Empty;
         }
 

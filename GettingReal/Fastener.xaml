@@ -13,12 +13,12 @@
 
         <Label x:Name="Label_Name" Content="Navn" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Label_Type" Content="Type" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Label_Spes" Content="Beskrivelse" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Specs" Content="Beskrivelse" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Label_Amount" Content="Antal" HorizontalAlignment="Left" Margin="100,250,0,0" VerticalAlignment="Top"/>
 
         <TextBox x:Name="TextBox_Name" HorizontalAlignment="Left" Margin="200,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Name_TextChanged" IsEnabled="False"/>
         <TextBox x:Name="TextBox_Type" HorizontalAlignment="Left" Margin="200,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Type_TextChanged" IsEnabled="False"/>
-        <TextBox x:Name="TextBox_Spes" HorizontalAlignment="Left" Margin="200,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Spes_TextChanged" IsEnabled="False"/>
+        <TextBox x:Name="TextBox_Specs" HorizontalAlignment="Left" Margin="200,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Specs_TextChanged" IsEnabled="False"/>
         <TextBox x:Name="TextBox_Amount" HorizontalAlignment="Left" Margin="200,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Amount_TextChanged" IsEnabled="False"/>
 
         <Button x:Name="Button_NewFastener" Content="Nyt samlingsmateriale" HorizontalAlignment="Left" Margin="100,300,0,0" VerticalAlignment="Top" Width="170" Click="Button_NewFastener_Click"/>
@@ -27,7 +27,7 @@
         <Button x:Name="Button_Next" Content="Næste samlingsmateriale" HorizontalAlignment="Left" Margin="100,450,0,0" VerticalAlignment="Top" Width="170" Click="Button_Next_Click" IsEnabled="False"/>
 
         <Button x:Name="Button_MainPage" Content="Main Page" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Click="Button_MainPage_Click"/>
-        <Button x:Name="Button_Del" Content="Slet SamlingsMateriale" HorizontalAlignment="Left" Margin="100,496,0,0" VerticalAlignment="Top" Width="170" Click="Button_Del_Click" IsEnabled="False"/>
+        <Button x:Name="Button_Del" Content="Slet Samlingsmateriale" HorizontalAlignment="Left" Margin="100,496,0,0" VerticalAlignment="Top" Width="170" Click="Button_Del_Click" IsEnabled="False"/>
 
     </Grid>
 </Window>
