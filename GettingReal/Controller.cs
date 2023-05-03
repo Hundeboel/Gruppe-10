@@ -15,7 +15,7 @@ namespace WPFapp
         public int EmployeeCount { get; private set; }
         public int EmployeeIndex { get; private set; }
 
-        //Ikke koblet til methods i nu
+        //Ikke koblet til methods endnu
         private ResourceRepo resourceRepo;
         public Resource CurrentResource { get; private set; }
         public int ResourceCount { get; private set; }

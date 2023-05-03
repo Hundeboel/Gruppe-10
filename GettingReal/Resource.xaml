@@ -30,5 +30,6 @@
         <Button x:Name="Button_MainPage_Resource" Content="Main Page" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Click="Button_MainPage_Click"/>
         
         <CheckBox x:Name="CheckBox_Rented" HorizontalAlignment="Left" Margin="325,200,0,0" VerticalAlignment="Top" IsEnabled="False" Checked="CheckBox_Rented_Checked" Unchecked="CheckBox_Rented_Unchecked"/>
+        <CheckBox x:Name="CheckBox_IsInvis" HorizontalAlignment="Left" Margin="300,55,0,0" VerticalAlignment="Top" Checked="CheckBox_IsInvis_Checked" Unchecked="CheckBox_IsInvis_Unchecked"/>
     </Grid>
 </Window>

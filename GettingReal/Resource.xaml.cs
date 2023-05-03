@@ -184,8 +184,9 @@ namespace WPFapp
                 controller.CurrentResource.Rented = false;
             }
         }
-
         #endregion
+
+        #region Methods
 
         private void enabledInputField()
         {
@@ -205,6 +206,17 @@ namespace WPFapp
             CheckBox_Rented.IsEnabled = false;
         }
 
+        private void updateInputField()
+        {
+            TextBox_Name.Text = controller.CurrentResource.Name;
+            TextBox_Type.Text = controller.CurrentResource.Type;
+            TextBox_Rented.Text = controller.CurrentResource.Rented.ToString();
+            TextBox_Amount.Text = controller.CurrentResource.Amount.ToString();
+            CheckBox_Rented.IsChecked = controller.CurrentResource.Rented;
+            //if (controller.CurrentResource.Rented == true) { CheckBox_Rented.IsChecked = true; }
+            //else { CheckBox_Rented.IsChecked = false; }
+        }
+
         private void clearInputField()
         {
             TextBox_Name.Text = string.Empty;
@@ -213,15 +225,46 @@ namespace WPFapp
             TextBox_Amount.Text = string.Empty;
             CheckBox_Rented.IsChecked = false;
         }
+        #endregion
 
-        private void updateInputField()
+        #region Visibility
+
+        private void isInvis()
         {
-            TextBox_Name.Text = controller.CurrentResource.Name;
-            TextBox_Type.Text = controller.CurrentResource.Type;
-            TextBox_Rented.Text = controller.CurrentResource.Rented.ToString();
-            TextBox_Amount.Text = controller.CurrentResource.Amount.ToString();
-            CheckBox_Rented.IsChecked = controller.CurrentResource.Rented;
+            Label_Name.Visibility = Visibility.Collapsed;
+            Label_Type.Visibility = Visibility.Collapsed;
+            Label_Rented.Visibility = Visibility.Collapsed;
+            Label_Amount.Visibility = Visibility.Collapsed;
+            TextBox_Name.Visibility = Visibility.Collapsed;
+            TextBox_Type.Visibility = Visibility.Collapsed;
+            TextBox_Rented.Visibility = Visibility.Collapsed;
+            TextBox_Amount.Visibility = Visibility.Collapsed;
+            CheckBox_Rented.Visibility = Visibility.Collapsed;
         }
+
+        private void isVis()
+        {
+            Label_Name.Visibility = Visibility.Visible;
+            Label_Type.Visibility = Visibility.Visible;
+            Label_Rented.Visibility = Visibility.Visible;
+            Label_Amount.Visibility = Visibility.Visible;
+            TextBox_Name.Visibility = Visibility.Visible;
+            TextBox_Type.Visibility = Visibility.Visible;
+            TextBox_Rented.Visibility = Visibility.Visible;
+            TextBox_Amount.Visibility = Visibility.Visible;
+            CheckBox_Rented.Visibility = Visibility.Visible;
+        }
+
+        private void CheckBox_IsInvis_Checked(object sender, RoutedEventArgs e)
+        {
+            isInvis();
+        }
+
+        private void CheckBox_IsInvis_Unchecked(object sender, RoutedEventArgs e)
+        {
+            isVis();
+        }
+        #endregion
     }
 }
 
