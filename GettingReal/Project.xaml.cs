@@ -81,15 +81,16 @@ namespace WPFapp
 
         private void Button_Next_Click(object sender, RoutedEventArgs e)
         {
-            controller.NextInstance();
-            Label_Count.Content = controller.InstanceCount.ToString();
-            Label_Index.Content = controller.InstanceIndex.ToString();
+            controller.NextProject();
+            Label_Count.Content = controller.ProjectCount.ToString();
+            Label_Index.Content = controller.ProjectIndex.ToString();
             disabledInputField();
             updateInputField();
 
             Button_Prev.IsEnabled = true;
+            Button_Edit.IsEnabled = true;
 
-            if (controller.InstanceIndex == controller.InstanceCount - 1)
+            if (controller.ProjectIndex == controller.ProjectCount - 1)
             {
                 Button_Next.IsEnabled = false;
             }
@@ -97,7 +98,28 @@ namespace WPFapp
 
         private void Button_Del_Click(object sender, RoutedEventArgs e)
         {
+            controller.RemoveProject();
+            Label_Count.Content = controller.ProjectCount.ToString();
+            Label_Index.Content = controller.ProjectIndex.ToString();
 
+            if (controller.ProjectCount == 1)
+            {
+                Button_Prev.IsEnabled = false;
+                Button_Next.IsEnabled = false;
+            }
+            else if (controller.ProjectIndex >= 0)
+            {
+                updateInputField();
+            }
+            else
+            {
+                clearInputField();
+                Button_Del.IsEnabled = false;
+                Button_Prev.IsEnabled = false;
+                Button_Next.IsEnabled = false;
+                Button_Edit.IsEnabled = false;
+            }
+            disabledInputField();
         }
 
         #endregion

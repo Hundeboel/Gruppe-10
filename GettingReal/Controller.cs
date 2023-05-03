@@ -111,6 +111,22 @@ namespace WPFapp
             }
         }
 
+        public void RemoveProject()
+        {
+            if (CurrentProject != null)
+            {
+                projectRepo.RemoveProject(CurrentProject);
+
+                ProjectCount = projectRepo.Count;
+                if (ProjectIndex == ProjectCount)
+                {
+                    ProjectIndex--;
+                }
+
+                CurrentProject = projectRepo.GetProjectAtIndex(ProjectIndex);
+            }
+        }
+
         public void NextEmployee()
         {
             if (EmployeeIndex < EmployeeCount - 1)
@@ -126,6 +142,15 @@ namespace WPFapp
             {
                 ResourceIndex++;
                 CurrentResource = resourceRepo.GetResourceAtIndex(ResourceIndex);
+            }
+        }
+
+        public void NextProject()
+        {
+            if (ProjectIndex < ProjectCount - 1)
+            {
+                ProjectIndex++;
+                CurrentProject = projectRepo.GetProjectAtIndex(ProjectIndex);
             }
         }
 
