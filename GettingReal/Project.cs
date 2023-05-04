@@ -10,15 +10,15 @@ namespace WPFapp
     {
         public string Name { get; set; }
         public bool Finished { get; set; }
-        public TimeSpan Timeframe { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
-        public Project(string name, bool finished, TimeSpan timeframe)
+        public Project(string name, bool finished, TimeSpan timeframe, DateTime startdate, DateTime enddate)
         {
             Name = name;
             Finished = finished;
-            Timeframe = timeframe;
+            StartDate= startdate;
+            EndDate= enddate;
         }
     }
 }
