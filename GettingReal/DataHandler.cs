@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Media.Media3D;
 using System.Xml.Linq;
 
-
+/*
 namespace WPFapp
 {
     public class DataHandler
@@ -28,10 +28,6 @@ namespace WPFapp
             string lineToSave = employee.MakeTitle();
             sw.WriteLine(lineToSave);
         }
-
-
-
-        /*
         public Person LoadPerson()
         {
             using StreamReader sr = new StreamReader(DataFileName);
@@ -102,6 +98,7 @@ namespace WPFapp
     }
 }
          
-         */
+         
     }
 }
+*/

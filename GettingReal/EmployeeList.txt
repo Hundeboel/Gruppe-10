@@ -1,0 +1,4 @@
+789;Floppy;Bob;Mester;True;13-07-2023
+456;Donald;Drumpf;Svend;True;16-05-2023
+456;Donald;Drumpf;Svend;True;16-05-2023
+789;Funko;Pop;Svend;True;22-05-2023
