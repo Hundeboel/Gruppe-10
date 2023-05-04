@@ -26,5 +26,10 @@ namespace WPFapp
             Status = status;
             Date = date;
         }
+
+        public string MakeTitle()
+        {
+            return $"{Id};{FirstName};{LastName};{Role};{Status};" + Date.ToString("dd-MM-yyyy");
+        }
     }
 }

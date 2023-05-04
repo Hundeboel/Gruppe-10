@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Media3D;
+using System.Xml.Linq;
 
-/*
+
 namespace WPFapp
 {
     public class DataHandler
@@ -20,12 +22,16 @@ namespace WPFapp
         {
             this.dataFileName = dataFileName;
         }
-        public void SavePerson(Person person)
+        public void SaveEmployee(Employee employee)
         {
             using StreamWriter sw = new StreamWriter(DataFileName);
-            string lineToSave = person.MakeTitle();
+            string lineToSave = employee.MakeTitle();
             sw.WriteLine(lineToSave);
         }
+
+
+
+        /*
         public Person LoadPerson()
         {
             using StreamReader sr = new StreamReader(DataFileName);
@@ -74,6 +80,28 @@ namespace WPFapp
             }
             return persons;
         }
+        
+         
+         
+         namespace Persistens2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Person person = new Person("Anders Andersen", new DateTime(1975, 8, 24), 175.9, true, 3);
+            
+            DataHandler handler = new DataHandler("Data.txt");
+            handler.SavePerson(person);
+
+            Console.Write("Writing Person: ");
+            Console.WriteLine(person.MakeTitle());
+
+            Console.ReadLine();
+        }
     }
 }
-*/
+         
+         */
+    }
+}

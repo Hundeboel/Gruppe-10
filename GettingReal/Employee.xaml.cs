@@ -160,6 +160,12 @@ namespace WPFapp
             disabledInputField();
 
         }
+
+        private void Button_Save_Click(object sender, RoutedEventArgs e)
+        {
+            controller.SE();
+        }
+
         #endregion
 
         //The input fields
@@ -402,6 +408,5 @@ namespace WPFapp
             isVis();
         }
         #endregion
-
     }
 }

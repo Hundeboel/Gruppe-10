@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -70,6 +71,13 @@ namespace WPFapp
             InstanceIndex = -1;
         }
 
+        public void SaveEmployee(Employee employee)
+        {
+            using StreamWriter sw = new StreamWriter("EmployeeList.txt");
+            string lineToSave = employee.MakeTitle();
+            sw.WriteLine(lineToSave);
+        }
+
         public void AddEmployee()
         {
             Employee employee = new Employee();
@@ -77,8 +85,13 @@ namespace WPFapp
             employeeRepo.AddEmployee(employee);
             EmployeeCount = employeeRepo.Count;
             EmployeeIndex = EmployeeCount - 1;
-
         }
+
+        public void SE()
+        { 
+            SaveEmployee(CurrentEmployee); 
+        }
+
         public void AddResource()
         {
             Resource resource = new Resource();
