@@ -81,6 +81,26 @@ namespace WPFapp
             sw.WriteLine(lineToSave);
         }
 
+        public Employee LoadEmployee()
+        {
+            using StreamReader sr = new StreamReader(@"..\..\..\..\GettingReal\EmployeeList.txt");
+            string lineToLoad = sr.ReadLine();
+            string[] employeeTraits = lineToLoad.Split(';');
+
+            int Id = int.Parse(employeeTraits[0]);
+            string FirstName = employeeTraits[1];
+            string LastName = employeeTraits[2];
+            string Role = employeeTraits[3];
+            bool Status = bool.Parse(employeeTraits[4]);
+            DateTime Date = DateTime.Parse(employeeTraits[5]);
+            
+            Employee employee = new Employee(Id, FirstName, LastName, Role, Status, Date);
+            employeeRepo.AddEmployee(employee);
+            EmployeeCount = employeeRepo.Count;
+            EmployeeIndex = EmployeeCount - 1;
+            return employee;
+        }
+
         public void AddEmployee()
         {
             Employee employee = new Employee();

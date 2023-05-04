@@ -8,7 +8,7 @@ namespace WPFapp
 {
     public class EmployeeRepo
     {
-        private List<Employee> employees;
+        public List<Employee> employees;
 
         public int Count
         {

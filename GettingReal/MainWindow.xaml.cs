@@ -20,9 +20,11 @@ namespace WPFapp
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Controller controller;
         public MainWindow()
         {
             InitializeComponent();
+            controller = new Controller();
         }
 
         private void Button_Project_Click(object sender, RoutedEventArgs e)
@@ -35,6 +37,7 @@ namespace WPFapp
         private void Button_Employee_Click(object sender, RoutedEventArgs e)
         {
             var newWindow = new Employee();
+            controller.LoadEmployee();
             newWindow.Show();
             this.Close();
         }
