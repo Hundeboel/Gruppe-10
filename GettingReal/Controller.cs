@@ -25,26 +25,33 @@ namespace WPFapp
         public int ProjectCount { get; private set; }
         public int ProjectIndex { get; private set; }
 
-        public Employee CurrentInstance { get; private set; }
-        public int InstanceCount { get; private set; }
-        public int InstanceIndex { get; private set; }
-
         private FastenersRepo fastenerRepo;
         public Fastener CurrentFastener { get; private set; }
         public int FastenerCount { get; private set; }
         public int FastenerIndex { get; private set; }
 
+        private RentalRepo rentalRepo;
+        public Rental CurrentRental { get; private set; }
+        public int RentalCount { get; private set; }
+        public int RentalIndex { get; private set; }
+
+
+        public Employee CurrentInstance { get; private set; }
+        public int InstanceCount { get; private set; }
+        public int InstanceIndex { get; private set; }
         public Controller()
         {
             CurrentEmployee = null;
             CurrentResource = null;
             CurrentProject = null;
             CurrentFastener = null;
+            CurrentRental = null;
 
             employeeRepo = new EmployeeRepo();
             resourceRepo = new ResourceRepo();
             projectRepo = new ProjectRepo();
             fastenerRepo = new FastenersRepo();
+            rentalRepo = new RentalRepo();
 
             EmployeeCount = 0;
             EmployeeIndex = -1;
@@ -54,6 +61,8 @@ namespace WPFapp
             ProjectIndex = -1;
             FastenerCount = 0;
             FastenerIndex = -1;
+            RentalCount = 0;
+            RentalIndex = -1;
 
             //For GUI
             CurrentInstance = null;
@@ -79,7 +88,6 @@ namespace WPFapp
             ResourceIndex = ResourceCount - 1;
 
         }
-
         public void AddProject() 
         { 
             Project project = new Project();
@@ -88,7 +96,6 @@ namespace WPFapp
             ProjectCount = projectRepo.Count; 
             ProjectIndex = ProjectCount - 1;
         }
-
         public void AddFastener()
         {
             Fastener fastener = new Fastener();
@@ -97,8 +104,14 @@ namespace WPFapp
             FastenerCount = fastenerRepo.Count;
             FastenerIndex = FastenerCount - 1;
         }
-
-
+        public void AddRental()
+        {
+            Rental rental = new Rental();
+            CurrentRental = rental;
+            rentalRepo.AddRental(rental);
+            RentalCount = rentalRepo.Count;
+            RentalIndex = RentalCount - 1;
+        }
         public void RemoveEmployee()
         {
             if (CurrentEmployee != null)
@@ -162,6 +175,22 @@ namespace WPFapp
             }
         }
 
+        public void RemoveRental()
+        {
+            if (CurrentRental != null)
+            {
+                rentalRepo.RemoveRental(CurrentRental);
+
+                RentalCount = rentalRepo.Count;
+                if (RentalIndex == RentalCount)
+                {
+                    RentalIndex--;
+                }
+
+                CurrentRental = rentalRepo.GetRentalAtIndex(RentalIndex);
+            }
+        }
+
         public void NextEmployee()
         {
             if (EmployeeIndex < EmployeeCount - 1)
@@ -197,6 +226,14 @@ namespace WPFapp
                 CurrentFastener = fastenerRepo.GetFastenerAtIndex(FastenerIndex);
             }
         }
+        public void NextRental()
+        {
+            if (RentalIndex < RentalCount - 1)
+            {
+                RentalIndex++;
+                CurrentRental = rentalRepo.GetRentalAtIndex(RentalIndex);
+            }
+        }
 
         public void PrevEmployee()
         {
@@ -229,6 +266,14 @@ namespace WPFapp
             {
                 FastenerIndex--;
                 CurrentFastener = fastenerRepo.GetFastenerAtIndex(FastenerIndex);
+            }
+        }
+        public void PrevRental()
+        {
+            if (RentalIndex > 0)
+            {
+                RentalIndex--;
+                CurrentRental = rentalRepo.GetRentalAtIndex(RentalIndex);
             }
         }
 

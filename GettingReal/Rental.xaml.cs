@@ -20,12 +20,14 @@ namespace WPFapp
     public partial class Rental : Window
     {
         private Controller controller;
+
+        string s = "";
         public Rental()
         {
             InitializeComponent();
             controller = new Controller();
         }
-
+        #region Buttons
         private void Button_MainPage_Click(object sender, RoutedEventArgs e)
         {
             var newWindow = new MainWindow();
@@ -35,36 +37,42 @@ namespace WPFapp
 
         private void Button_NewRental_Click(object sender, RoutedEventArgs e)
         {
-            controller.AddInstance();
-            Label_Count.Content = controller.InstanceCount.ToString();
-            Label_Index.Content = controller.InstanceIndex.ToString();
+            controller.AddRental();
+            Label_Count.Content = controller.RentalCount.ToString();
+            Label_Index.Content = controller.RentalIndex.ToString();
 
-            if (controller.InstanceIndex > 0)
+            if (controller.RentalIndex > 0)
             {
                 Button_Prev.IsEnabled = true;
             }
             Button_Next.IsEnabled = false;
 
-            enabledTextboxes();
-            clearTextboxes();
+            Button_Edit.IsEnabled = false;
+
+            Button_Del.IsEnabled = true;
+
+            enabledInputField();
+            clearInputField();
         }
 
         private void Button_Edit_Click(object sender, RoutedEventArgs e)
         {
-
+            enabledInputField();
         }
 
         private void Button_Prev_Click(object sender, RoutedEventArgs e)
         {
-            controller.PrevInstance();
-            Label_Count.Content = controller.InstanceCount.ToString();
-            Label_Index.Content = controller.InstanceIndex.ToString();
-            disabledTextboxes();
-            updateTextbboxes();
+            controller.PrevRental();
+            Label_Count.Content = controller.RentalCount.ToString();
+            Label_Index.Content = controller.RentalIndex.ToString();
+            disabledInputField();
+            updateInputField();
 
             Button_Next.IsEnabled = true;
 
-            if (controller.InstanceIndex == 0)
+            Button_Edit.IsEnabled = true;
+
+            if (controller.RentalIndex == 0)
             {
                 Button_Prev.IsEnabled = false;
             }
@@ -72,72 +80,119 @@ namespace WPFapp
 
         private void Button_Next_Click(object sender, RoutedEventArgs e)
         {
-            controller.NextInstance();
-            Label_Count.Content = controller.InstanceCount.ToString();
-            Label_Index.Content = controller.InstanceIndex.ToString();
-            disabledTextboxes();
-            updateTextbboxes();
+            controller.NextRental();
+            Label_Count.Content = controller.RentalCount.ToString();
+            Label_Index.Content = controller.RentalIndex.ToString();
+            disabledInputField();
+            updateInputField();
 
             Button_Prev.IsEnabled = true;
+            Button_Edit.IsEnabled = true;
 
-            if (controller.InstanceIndex == controller.InstanceCount - 1)
+            if (controller.RentalIndex == controller.RentalCount - 1)
             {
                 Button_Next.IsEnabled = false;
             }
         }
 
+        private void Button_Del_Click(object sender, RoutedEventArgs e)
+        {
+            controller.RemoveRental();
+            Label_Count.Content = controller.RentalCount.ToString();
+            Label_Index.Content = controller.RentalIndex.ToString();
+
+            if (controller.RentalCount == 1)
+            {
+                Button_Prev.IsEnabled = false;
+                Button_Next.IsEnabled = false;
+            }
+            else if (controller.RentalIndex >= 0)
+            {
+                updateInputField();
+            }
+            else
+            {
+                clearInputField();
+                Button_Del.IsEnabled = false;
+                Button_Prev.IsEnabled = false;
+                Button_Next.IsEnabled = false;
+                Button_Edit.IsEnabled = false;
+            }
+
+            disabledInputField();
+
+        }
+
+        #endregion
+
+        #region Input fields
+
+        //tekstboksene er indtastningsstrings lige nu
+
         private void TextBox_Resource_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            if (controller.RentalIndex >= 0)
+            {
+                controller.CurrentRental.Resource = TextBox_Resource.Text;
+            }
         }
 
         private void TextBox_Project_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            if (controller.RentalIndex >= 0)
+            {
+                controller.CurrentRental.Project = TextBox_Project.Text;
+            }
         }
 
         private void TextBox_Periode_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            
         }
 
-        private void TextBox_Renter_TextChanged(object sender, TextChangedEventArgs e)
+        private void TextBox_Rentee_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            if (controller.RentalIndex >= 0)
+            {
+                controller.CurrentRental.Rentee = TextBox_Rentee.Text;
+            }
         }
-        private void enabledTextboxes()
+
+        #endregion
+
+        #region Methods
+        private void enabledInputField()
         {
             TextBox_Resource.IsEnabled = true;
             TextBox_Project.IsEnabled = true;
             TextBox_Periode.IsEnabled = true;
-            TextBox_Renter.IsEnabled = true;
+            TextBox_Rentee.IsEnabled = true;
         }
 
-        private void disabledTextboxes()
+        private void disabledInputField()
         {
             TextBox_Resource.IsEnabled = false;
             TextBox_Project.IsEnabled = false;
             TextBox_Periode.IsEnabled = false;
-            TextBox_Renter.IsEnabled = false;
+            TextBox_Rentee.IsEnabled = false;
         }
 
-        private void updateTextbboxes()
+        private void updateInputField()
         {
-            TextBox_Resource.Text = controller.CurrentInstance.FirstName;
-            TextBox_Project.Text = controller.CurrentInstance.LastName;
-            TextBox_Periode.Text = controller.CurrentInstance.Role;
-            TextBox_Renter.Text = controller.CurrentInstance.Id.ToString();
+            TextBox_Resource.Text = controller.CurrentRental.Resource;
+            TextBox_Project.Text = controller.CurrentRental.Project;
+            TextBox_Periode.Text = controller.CurrentRental.Timeframe.ToString();
+            TextBox_Rentee.Text = controller.CurrentRental.Rentee;
         }
 
-        private void clearTextboxes()
+        private void clearInputField()
         {
             TextBox_Resource.Text = string.Empty;
             TextBox_Project.Text = string.Empty;
             TextBox_Periode.Text = string.Empty;
-            TextBox_Renter.Text = string.Empty;
+            TextBox_Rentee.Text = string.Empty;
         }
-
-
+        #endregion
     }
 }
 

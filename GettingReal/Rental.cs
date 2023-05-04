@@ -8,9 +8,12 @@ namespace WPFapp
 {
     public partial class Rental
     {
-        public Project Project { get; set; }
-        public Resource Resource { get; set; }
-        public Employee Rentee { get; set; }
+        /// <summary>
+        /// Ændret til strings (fra Project, Resource og Employee-typer) 
+        /// </summary>
+        public string Project { get; set; }
+        public string Resource { get; set; }
+        public string Rentee { get; set; }
         public TimeSpan Timeframe { get; set; }
     }
 }

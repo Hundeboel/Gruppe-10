@@ -25,7 +25,7 @@ namespace WPFapp
             rentals.Add(rental);
         }
 
-        public Rental GetRentalByResource(int index)
+        public Rental GetRentalAtIndex(int index)
         {
             Rental rentalResult = null;
             if (index >= 0 && index < rentals.Count)
