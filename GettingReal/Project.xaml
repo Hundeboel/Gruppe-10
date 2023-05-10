@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFapp"
         mc:Ignorable="d"
-        Title="Project" Height="640" Width="360" Background="IndianRed"
+        Title="Project" Height="720" Width="360" Background="IndianRed"
         WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
         <Label x:Name="Label_Index" Content="Index" HorizontalAlignment="Left" Margin="100,50,0,0" VerticalAlignment="Top"/>

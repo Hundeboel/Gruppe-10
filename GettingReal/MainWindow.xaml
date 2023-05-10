@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFapp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="640" Width="360" Background="Beige"
+        Title="MainWindow" Height="720" Width="360" Background="Beige"
         WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
         <Button x:Name="Button_Project" Content="Projekt" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top" Width="120" Click="Button_Project_Click"/>

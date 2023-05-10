@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFapp"
         mc:Ignorable="d"
-        Title="Employee" Height="640" Width="360" Background="ForestGreen"
+        Title="Employee" Height="720" Width="360" Background="ForestGreen"
         WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
         <Label x:Name="Label_Index" Content="Index" HorizontalAlignment="Left" Margin="100,50,0,0" VerticalAlignment="Top"/>
@@ -29,12 +29,12 @@
         <CheckBox x:Name="CheckBox_Status" HorizontalAlignment="Left" Margin="200,305,0,0" VerticalAlignment="Top" IsEnabled="False" Checked="CheckBox_Status_Checked" Unchecked="CheckBox_Status_Unchecked"/>
         <DatePicker x:Name="DatePicker_Date" HorizontalAlignment="Left" Margin="200,350,0,0" VerticalAlignment="Top" Width="120" IsEnabled="False" SelectedDateChanged="DatePicker_Date_SelectedDateChanged" FirstDayOfWeek="Monday"/>
 
-        <Button x:Name="Button_NewEmployee" Content="Ny ansat" HorizontalAlignment="Left" Margin="0,100,0,0" VerticalAlignment="Top" Width="80" Click="Button_NewEmployee_Click"/>
-        <Button x:Name="Button_Edit" Content="Redigér" HorizontalAlignment="Left" Margin="0,150,0,0" VerticalAlignment="Top" Width="80" Click="Button_Edit_Click" IsEnabled="False"/>
-        <Button x:Name="Button_Prev" Content="Tidligere profil" HorizontalAlignment="Left" Margin="0,200,0,0" VerticalAlignment="Top" Width="80" Click="Button_Prev_Click" IsEnabled="False"/>
-        <Button x:Name="Button_Next" Content="Næste profil" HorizontalAlignment="Left" Margin="0,250,0,0" VerticalAlignment="Top" Width="80" Click="Button_Next_Click" IsEnabled="False"/>
-        <Button x:Name="Button_Del" Content="Slet profil" HorizontalAlignment="Left" Margin="0,300,0,0" VerticalAlignment="Top" Width="80" Click="Button_Del_Click" IsEnabled="False"/>
-        <Button x:Name="Button_Save" Content="Gem profil" HorizontalAlignment="Left" Margin="0,350,0,0" VerticalAlignment="Top" Width="80" Click="Button_Save_Click" IsEnabled="True"/>
+        <Button x:Name="Button_NewEmployee" Content="Ny ansat" HorizontalAlignment="Left" Margin="100,400,0,0" VerticalAlignment="Top" Width="80" Click="Button_NewEmployee_Click"/>
+        <Button x:Name="Button_Edit" Content="Redigér" HorizontalAlignment="Left" Margin="100,450,0,0" VerticalAlignment="Top" Width="80" Click="Button_Edit_Click" IsEnabled="False"/>
+        <Button x:Name="Button_Prev" Content="Tidligere profil" HorizontalAlignment="Left" Margin="100,500,0,0" VerticalAlignment="Top" Width="80" Click="Button_Prev_Click" IsEnabled="False"/>
+        <Button x:Name="Button_Next" Content="Næste profil" HorizontalAlignment="Left" Margin="100,550,0,0" VerticalAlignment="Top" Width="80" Click="Button_Next_Click" IsEnabled="False"/>
+        <Button x:Name="Button_Del" Content="Slet profil" HorizontalAlignment="Left" Margin="100,600,0,0" VerticalAlignment="Top" Width="80" Click="Button_Del_Click" IsEnabled="False"/>
+        <Button x:Name="Button_Save" Content="Gem profil" HorizontalAlignment="Left" Margin="100,650,0,0" VerticalAlignment="Top" Width="80" Click="Button_Save_Click" IsEnabled="True"/>
 
         <Button x:Name="Button_MainPage" Content="Main Page" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Click="Button_MainPage_Click"/>
 

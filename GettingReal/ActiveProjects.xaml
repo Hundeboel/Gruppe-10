@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFapp"
         mc:Ignorable="d"
-        Title="ActiveProjects" Height="650" Width="400" Background="AliceBlue">
+        Title="ActiveProjects" Height="720" Width="400" Background="AliceBlue">
     <Grid>
         <Button x:Name="Button_MainPage" Content="Main Page" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Click="Button_MainPage_Click"/>
         <Button x:Name="Button_Prev10" Content="Forrige 10" HorizontalAlignment="Left" Margin="25,400,0,0" VerticalAlignment="Top" Width="80" Click="Button_MainPage_Click"/>
